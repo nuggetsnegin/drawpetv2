@@ -8,34 +8,31 @@
     </p>
 
     <Canvas />
-    <Gallery />
   </main>
 </template>
 
 <script>
 import Canvas from "./Canvas.vue";
-import Gallery from "./Gallery.vue";
 
 export default {
   name: "Main",
-  // props: {
-  //   msg: String
-  // }
   components: {
     Canvas,
-    Gallery,
   },
 };
 </script>
 
 <style scoped>
 
+main {
+  flex: 1 0 auto;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex: 1 0 auto;
 }
 
 h1 {

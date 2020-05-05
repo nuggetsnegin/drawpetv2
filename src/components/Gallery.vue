@@ -1,7 +1,7 @@
 <template>
   <aside class="gallery-wrapper">
     <ul class="gallery-list">
-      <li class="gallery-item vibrate" id="gallery"></li>
+      <li class="gallery-item vibrate" id="gallery">HELLOOOOOOOOOOOOOOOOOO</li>
     </ul>
   </aside>
 </template>
@@ -15,6 +15,7 @@ export default {
 <style>
 .gallery-wrapper {
   grid-area: gallery;
+  border: 1px solid red;
 }
 
 .gallery-wrapper li {

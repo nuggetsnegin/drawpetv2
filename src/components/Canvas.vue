@@ -6,7 +6,7 @@
 
     <div class="draw-options">
       <button class="pencil" id="pencil">
-        <label for="color-selection">Pencil:</label
+        <label for="color-selection">Pencil </label
         ><input
           name="color-selection"
           type="color"
@@ -20,27 +20,34 @@
       <button class="random-color" id="random-color">
         ???
       </button>
-      <button class="clear" id="clear">Restart</button>
+      <button class="clear" id="clear">Clear</button>
       <button class="save" id="save">Save</button>
     </div>
+
+    <Gallery />
   </div>
 </template>
 
 <script>
+import Gallery from "./Gallery.vue";
+
 export default {
   name: "Canvas",
+  components:{
+    Gallery
+  } 
 };
 </script>
 
 <style>
 .canvas-wrap {
-  margin-top: 2rem;
   border: 2px dashed #222222;
   border-radius: 10px;
   width: 500px;
   height: 500px;
   background: white;
   grid-area: canvas;
+  margin: 2rem 0;
 }
 
 button {
