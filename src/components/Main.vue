@@ -1,46 +1,41 @@
 <template>
- <main class="wrapper">
-      <h1>Draw my <span class="accent">Pet</span></h1>
-      <p>
-        Draw your <span class="accent">pet</span> (imaginary or real) in the
-        canvas below! Use the <span class="accent">save</span> feature so the
-        entire world can see your masterpiece.
-      </p>
+  <main class="wrapper">
+    <h1>Draw my <span class="accent">Pet</span></h1>
+    <p>
+      Draw your <span class="accent">pet</span> (imaginary or real) in the
+      canvas below! Use the <span class="accent">save</span> feature so the
+      entire world can see your masterpiece.
+    </p>
 
-      <Canvas />
+    <Canvas />
+    <Gallery />
   </main>
 </template>
 
 <script>
-import Canvas from './Canvas.vue'
+import Canvas from "./Canvas.vue";
+import Gallery from "./Gallery.vue";
 
 export default {
-  name: 'Main',
+  name: "Main",
   // props: {
   //   msg: String
   // }
   components: {
-    Canvas
-  }
-}
+    Canvas,
+    Gallery,
+  },
+};
 </script>
 
 <style scoped>
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
 
 h1 {
