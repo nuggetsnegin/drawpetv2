@@ -1,32 +1,48 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
+    <div class="settings-canvas-grid">
+        <div class="canvas-wrap" id="canvas-wrap">
+            <canvas id="draw" class="draw"></canvas>
+        </div>
+
+        <div class="draw-options">
+            <button class="pencil" id="pencil">
+                    <label for="color-selection">Pencil:</label
+                    ><input
+                    name="color-selection"
+                    type="color"
+                    id="color-selection"
+                    class="color-selection"
+                    />
+            </button>
+            <button class="eraser" id="eraser">
+                    Eraser
+            </button>
+            <button class="random-color" id="random-color">
+                    ???
+            </button>
+            <button class="clear" id="clear">Restart</button>
+            <button class="save" id="save">Save</button>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
   name: 'Canvas',
-  props: {
-    msg: String
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.canvas-wrap {
+  border: 2px dashed #222222;
+  border-radius: 10px;
+  width: 500px;
+  height: 500px;
+  background: white;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: canvas;
 }
 </style>
