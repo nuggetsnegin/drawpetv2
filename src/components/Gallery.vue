@@ -12,15 +12,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .gallery-wrapper {
   grid-area: gallery;
 }
 
 .gallery-wrapper li {
-  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(3, -webkit-min-content);
   grid-template-columns: repeat(3, min-content);
   grid-template-rows: auto;
   margin: 2px;

@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .canvas-wrap {
   margin-top: 2rem;
   border: 2px dashed #222222;
@@ -85,7 +85,9 @@ button:focus {
   display: grid;
   gap: 2px;
   grid-template-rows: auto;
-  grid-template-areas: "color canvas canvas gallery" "color canvas canvas gallery";
+  grid-template-areas: 
+  "color canvas canvas gallery"
+  "color canvas canvas gallery";
 }
 
 .color-selection {
