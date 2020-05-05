@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style scoped>
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,14 +46,19 @@ export default {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 3px white;
   font-size: 4rem;
-  margin: 0px 5px 0px 0px;
+  margin: 2rem 0;
 }
 
-.accent {
+h1 .accent {
   color: #f0df45;
-  -webkit-text-stroke: 1px #222222;
+  -webkit-text-stroke: 2px #222222;
+}
+
+span {
+  color: #f0df45;
+  -webkit-text-stroke: 0.8px #222222;
 }
 
 img {
@@ -68,17 +74,5 @@ p {
   font-size: 1rem;
   border-radius: 25px;
   text-align: center;
-}
-
-body {
-  min-height: 100vh;
-  font-size: 62.5%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr auto;
-      grid-template-rows: 1fr auto;
-  color: #222222;
-  font-family: "Fredoka One", cursive;
-  background-color: #f4f4f4;
 }
 </style>
