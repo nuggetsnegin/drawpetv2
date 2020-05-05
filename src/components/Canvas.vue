@@ -33,7 +33,9 @@ export default {
 </script>
 
 <style scoped>
+
 .canvas-wrap {
+  margin-top: 2rem;
   border: 2px dashed #222222;
   border-radius: 10px;
   width: 500px;
