@@ -10,11 +10,12 @@ export default {
 
 <style>
 footer {
-  margin-top: auto;
+  flex-shrink: 0;
   padding: 0.5rem 0rem;
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
   background-color: #f0df45;
+  height: 25px;
 }
 </style>
