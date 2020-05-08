@@ -1,7 +1,7 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="draw" class="draw"></canvas>
+      <canvas id="canvas" class="draw"></canvas>
     </div>
 
     <div class="draw-options">
@@ -36,6 +36,14 @@ export default {
   components:{
     Gallery
   },
+  mounted(){
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    this.vueCanvas = ctx;
+  },
+  data: function() {
+    vueCanvas: null
+  }
 };
 </script>
 
