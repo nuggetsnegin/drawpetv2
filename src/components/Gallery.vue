@@ -1,15 +1,33 @@
 <template>
   <aside class="gallery-wrapper">
     <ul class="gallery-list">
-      <li class="gallery-item vibrate" id="gallery">HELLOOOOOOOOOOOOOOOOOO</li>
+      <li class="gallery-item vibrate" id="gallery"></li>
     </ul>
   </aside>
 </template>
 
 <script>
+import firebase from "./firebase.js";
+
 export default {
   name: "Gallery",
+
+  mounted(){
+    // Create a root reference
+    const storageRef = firebase.storage().ref();
+    /* list all returns a list of all images*/
+    const allImages = storageRef.listAll();
+
+    /*grab all the images' download URLS from firebase storage and then call displayImage*/
+    allImages.then(function(result) {
+      result.items.forEach(function(imageRef) {
+        // displayImage(imageRef);
+      });
+    });
+  }
+
 };
+
 </script>
 
 <style>
