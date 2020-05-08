@@ -1,7 +1,7 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" height="500" width="500"></canvas>
+      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" height="500" width="500" ref="canvas"></canvas>
     </div>
 
     <div class="draw-options">
@@ -41,27 +41,24 @@ export default {
       canvas: null,
       ctx: null,
       drawing: false,
-      mouse: { x: this.e.pageX - this.offsetLeft, y: this.e.pageY - this.offsetTop}
+      startX: 0,
+      startY: 0,
+      points: [],
     }
   },
   mounted(){
-    this.canvas = this.refs.canvas;
+    this.canvas = this.$refs.canvas;
     this.ctx = this.canvas.getContext("2d");
     this.ctx.lineWidth = 10;
     this.ctx.lineCap ="round";
     this.ctx.lineJoin = "round";
-    this.ctx.strokeStyle = 'black';
 
-
-    console.log(this.canvas.getBoundingClientRect()); // gets canvas size and position relative to the viewport)
-
-
-    this.ctx.canvas.width = 500;
-    this.ctx.canvas.height = 500;
-    if (window.innerWidth < 500) {
-      this.ctx.canvas.width = window.innerWidth -10;
-      this.ctx.canvas.height = window.innerWidth -10;
-    }
+    // this.ctx.canvas.width = 500;
+    // this.ctx.canvas.height = 500;
+    // if (window.innerWidth < 500) {
+    //   this.ctx.canvas.width = window.innerWidth -10;
+    //   this.ctx.canvas.height = window.innerWidth -10;
+    // }
 
   // console.log(this.canvas.height)
   // console.log(this.canvas.width )
@@ -75,30 +72,40 @@ export default {
   },
   methods: {
     startDrawing(e){
+
+      var rect = this.canvas.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+
+      this.startX = x;
+      this.startY = y;
+
+      this.points.push({
+        x: x,
+        y: y
+      });
+
       this.drawing = true;
       this.draw(e);
-      console.log('drawing')
       
     },
     stopDrawing(){
       this.drawing = false;
       this.ctx.beginPath()
-      console.log('done')
+
     },
     draw(e){
+      var rect = this.canvas.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+
       if(!this.drawing) return;
-      console.log(this.mouse.x)
-      console.log(this.mouse.y)
 
-      this.mouse.x = this.e.pageX - this.offsetLeft;
-      this.mouse.y = this.e.pageY - this.offsetTop;
-
-      console.log(e)
-      this.ctx.lineTo(this.mouse.x, this.mouse.y);
+      this.ctx.lineTo(this.startX, this.startY);
       this.ctx.stroke()
 
       this.ctx.beginPath()
-      this.ctx.moveTo(this.mouse.x, this.mouse.y);
+      this.ctx.moveTo(x, y);
 
 
     },
