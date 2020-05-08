@@ -7,35 +7,27 @@
 </template>
 
 <script>
-// import firebase from "../../firebase";
+import firebase from "../../firebase";
 
 export default {
   name: "Gallery",
-  // mounted(){
-  //   // Create a root reference
-  //   const storageRef = firebase.storage().ref();
-  //   /* list all returns a list of all images*/
-  //   const allImages = storageRef.listAll();
-
-  //   /*grab all the images' download URLS from firebase storage and then call displayImage*/
-  //   allImages.then(function(result) {
-  //     result.items.forEach(function(imageRef) {
-  //       this.displayImage(imageRef);
-  //     });
-  //   });
-  // },
-  // methods: {
-  //     /*displays images to DOM to a UL using append*/
-  //     displayImage(imageRef) {
-  //       imageRef.getDownloadURL().then(result => {
-  //         const retrievedImage = result;
-  //         const img = new Image(130, 130);
-  //         img.src = retrievedImage;
-  //       });
-  //   }
-  // }
+  mounted(){
+    // Create a root reference
+    const storageRef = firebase.storage().ref();
+    /* list all returns a list of all images*/
+    const allImages = storageRef.listAll();
+    /*grab all the images' download URLS from firebase storage and then call displayImage*/
+    allImages.then(function(result) {
+      result.items.forEach(function(imageRef) {
+        imageRef.getDownloadURL().then(result => {
+          const retrievedImage = result;
+          const img = new Image(130, 130);
+          img.src = retrievedImage;
+        });
+      });
+    });
+  },
 };
-
 </script>
 
 <style>
