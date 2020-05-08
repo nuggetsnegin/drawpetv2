@@ -177,13 +177,13 @@ button:focus {
 }
 
 .settings-canvas-grid {
-  z-index: 111;
+  z-index: 2;
   display: grid;
   gap: 5px;
   grid-template-rows: auto;
   grid-template-areas: 
-  ". color canvas"
-  ". color canvas";
+  "color canvas"
+  "color canvas"
 }
 
 .color-selection {

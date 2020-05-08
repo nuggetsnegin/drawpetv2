@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Main />
-    <Gallery />
-    <Footer />
+    <Main class="canvas"/>
+    <Gallery class="gallery"/>
+    <Footer class="footer"/>
   </div>
 </template>
 
@@ -27,10 +27,28 @@ export default {
 #app {
   color: #222222;
   font-family: "Fredoka One", cursive;
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+  "canvas canvas gallery"
+  "footer footer footer";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+.canvas{
+  grid-area: canvas;
+}
+
+.gallery{
+  grid-area: gallery;
+}
+
+.footer{
+  grid-area: footer;
 }
 
 html, body{
-  height: 100%;
+  height: 100vh;
 }
 
 body {

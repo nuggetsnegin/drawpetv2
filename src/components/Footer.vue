@@ -8,14 +8,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 footer {
-  flex-shrink: 0;
-  padding: 0.5rem 0rem;
+  padding: 5px 0px;
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
   background-color: #f0df45;
-  height: 25px;
 }
 </style>
