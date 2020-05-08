@@ -14,10 +14,10 @@
           class="color-selection"
         />
       </button>
-      <button class="eraser" id="eraser">
+      <button class="eraser" id="eraser" v-on:click="erase">
         Eraser
       </button>
-      <button class="random-color" id="random-color">
+      <button class="random-color" id="random-color" v-on:click="getRandomColor">
         ???
       </button>
       <button class="clear" id="clear" v-on:click="clear">Clear</button>
@@ -106,6 +106,17 @@ export default {
     },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
+    },
+    erase(){
+      this.ctx.strokeStyle = "white";
+    },
+    getRandomColor(){
+      let letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return (this.ctx.strokeStyle = color);
     }
   }
 };
