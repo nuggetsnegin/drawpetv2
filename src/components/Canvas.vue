@@ -1,7 +1,7 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing"></canvas>
+      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw"></canvas>
     </div>
 
     <div class="draw-options">
@@ -20,7 +20,7 @@
       <button class="random-color" id="random-color">
         ???
       </button>
-      <button class="clear" id="clear">Clear</button>
+      <button class="clear" id="clear" v-on:click="clear">Clear</button>
       <button class="save" id="save">Save</button>
     </div>
 
@@ -36,23 +36,57 @@ export default {
   components:{
     Gallery
   },
-  mounted(){
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    this.vueCanvas = ctx;
-  },
   data: function() {
-    // eslint-disable-next-line no-unused-labels
-    vueCanvas: null
+    return{
+      canvas: null,
+      ctx: null,
+      drawing: false,
+    }
+  },
+  mounted(){
+    this.canvas = document.getElementById("canvas");
+    this.ctx = this.canvas.getContext("2d");
+    this.ctx.lineWidth = 10;
+    this.ctx.lineCap ="round"
+    this.ctx.strokeStyle = "red"
+    this.canvas.height = 500;
+    this.canvas.width = 500;
+
+  console.log(this.canvas.height)
+  console.log(this.canvas.width )
+  console.log(this.canvas.getBoundingClientRect().width)
+    
+    // const drawWindow = getComputedStyle(this.canvas);
+    // this.canvas.height = parseInt(drawWindow.getPropertyValue("width"));
+    // this.canvas.width = parseInt(drawWindow.getPropertyValue("height"));
+    // this.ctx.fillRect(498, 498, this.canvas.width, this.canvas.height);
+    
   },
   methods: {
-    startDrawing(){
+    startDrawing(e){
       this.drawing = true;
-      console.log(this.drawing);
+      this.draw(e);
+      console.log('drawing')
     },
     stopDrawing(){
       this.drawing = false;
-      console.log(this.drawing);
+      this.ctx.beginPath()
+      console.log('done')
+    },
+    draw(e){
+      if(!this.drawing) return;
+      console.log(e)
+      this.ctx.lineTo(e.clientX,e.clientY)
+      this.ctx.stroke()
+
+      this.ctx.beginPath()
+      this.ctx.moveTo(e.clientX,e.clientY)
+      console.log(this.ctx)
+      console.log(this.canvas.width)
+      console.log(this.canvas.height)
+    },
+    clear(){
+      this.ctx.clearRect(0, 0, 500, 500);
     }
   }
 };
