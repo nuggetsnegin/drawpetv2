@@ -2,10 +2,10 @@
 
 ![Draw My Pet](https://i.gyazo.com/336b7547d0738bf743fb30b3750b6f4d.png)
 # Draw My Pet V2
-Version 2 of my [vanilla JavaScript app](https://nuggetsnegin.github.io/drawpetv2/). Second version of the drawing application using Vue, HTML Canvas and Firebase for storage!
+Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-sauermann-beyond-bootcamp). Second version of the drawing application using Vue, HTML Canvas and Firebase for storage!
 
 
-[Live Link](https://nuggetsnegin.github.io/negin-sauermann-beyond-bootcamp/)
+[Live Link](https://nuggetsnegin.github.io/drawpetv2/)
 
 ## Built With
 
