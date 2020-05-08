@@ -1,7 +1,9 @@
+/* eslint-disable vue/require-v-for-key */
 <template>
   <aside class="gallery-wrapper">
     <ul class="gallery-list">
-      <li class="gallery-item vibrate" id="gallery"></li>
+      <li class="gallery-item vibrate" id="gallery">
+      </li>
     </ul>
   </aside>
 </template>
@@ -14,6 +16,8 @@ export default {
   mounted(){
     // Create a root reference
     const storageRef = firebase.storage().ref();
+    const node = document.createElement("LI");
+
     /* list all returns a list of all images*/
     const allImages = storageRef.listAll();
     /*grab all the images' download URLS from firebase storage and then call displayImage*/
@@ -23,6 +27,10 @@ export default {
           const retrievedImage = result;
           const img = new Image(130, 130);
           img.src = retrievedImage;
+          /*append image to dynamic li*/
+          node.appendChild(img);
+          /*append that li to the dom*/
+          document.getElementById("gallery").appendChild(node);
         });
       });
     });
@@ -37,9 +45,10 @@ export default {
 }
 
 .gallery-wrapper li {
-  display: grid;
+  
+  /* display: grid;
   grid-template-columns: repeat(3, min-content);
   grid-template-rows: auto;
-  margin: 2px;
+  margin: 2px; */
 }
 </style>
