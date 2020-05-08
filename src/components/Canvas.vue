@@ -6,7 +6,7 @@
 
     <div class="draw-options">
       <button class="pencil" id="pencil">
-        <label for="color-selection">Pencil </label
+        <label for="color-selection">Color </label
         ><input
           name="color-selection"
           type="color"
@@ -51,47 +51,27 @@ export default {
     this.ctx.lineWidth = 10;
     this.ctx.lineCap ="round";
     this.ctx.lineJoin = "round";
-
-    // this.ctx.canvas.width = 500;
-    // this.ctx.canvas.height = 500;
-    // if (window.innerWidth < 500) {
-    //   this.ctx.canvas.width = window.innerWidth -10;
-    //   this.ctx.canvas.height = window.innerWidth -10;
-    // }
-
-  // console.log(this.canvas.height)
-  // console.log(this.canvas.width )
-  // console.log(this.canvas.getBoundingClientRect().width)
-    
-  //   const drawWindow = getComputedStyle(this.canvas);
-  //   this.canvas.height = parseInt(drawWindow.getPropertyValue("width"));
-  //   this.canvas.width = parseInt(drawWindow.getPropertyValue("height"));
-  //   this.ctx.fillRect(498, 498, this.canvas.width, this.canvas.height);
-    
   },
   methods: {
     startDrawing(e){
-
-      var rect = this.canvas.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
+      const rect = this.canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
       this.startX = x;
       this.startY = y;
 
       this.drawing = true;
       this.draw(e);
-      
     },
     stopDrawing(){
       this.drawing = false;
       this.ctx.beginPath()
-
     },
     draw(e){
-      var rect = this.canvas.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
+      const rect = this.canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
       if(!this.drawing) return;
 
@@ -106,6 +86,7 @@ export default {
     },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
+      this.drawing = false;
     },
     erase(){
       this.ctx.strokeStyle = "white";
