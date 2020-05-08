@@ -1,7 +1,7 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="canvas" class="draw"></canvas>
+      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing"></canvas>
     </div>
 
     <div class="draw-options">
@@ -42,7 +42,18 @@ export default {
     this.vueCanvas = ctx;
   },
   data: function() {
+    // eslint-disable-next-line no-unused-labels
     vueCanvas: null
+  },
+  methods: {
+    startDrawing(){
+      this.drawing = true;
+      console.log(this.drawing);
+    },
+    stopDrawing(){
+      this.drawing = false;
+      console.log(this.drawing);
+    }
   }
 };
 </script>
