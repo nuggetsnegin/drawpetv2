@@ -1,7 +1,7 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw"></canvas>
+      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" height="500" width="500"></canvas>
     </div>
 
     <div class="draw-options">
@@ -41,25 +41,36 @@ export default {
       canvas: null,
       ctx: null,
       drawing: false,
+      mouse: { x: this.e.pageX - this.offsetLeft, y: this.e.pageY - this.offsetTop}
     }
   },
   mounted(){
-    this.canvas = document.getElementById("canvas");
+    this.canvas = this.refs.canvas;
     this.ctx = this.canvas.getContext("2d");
     this.ctx.lineWidth = 10;
-    this.ctx.lineCap ="round"
-    this.ctx.strokeStyle = "red"
-    this.canvas.height = 500;
-    this.canvas.width = 500;
+    this.ctx.lineCap ="round";
+    this.ctx.lineJoin = "round";
+    this.ctx.strokeStyle = 'black';
 
-  console.log(this.canvas.height)
-  console.log(this.canvas.width )
-  console.log(this.canvas.getBoundingClientRect().width)
+
+    console.log(this.canvas.getBoundingClientRect()); // gets canvas size and position relative to the viewport)
+
+
+    this.ctx.canvas.width = 500;
+    this.ctx.canvas.height = 500;
+    if (window.innerWidth < 500) {
+      this.ctx.canvas.width = window.innerWidth -10;
+      this.ctx.canvas.height = window.innerWidth -10;
+    }
+
+  // console.log(this.canvas.height)
+  // console.log(this.canvas.width )
+  // console.log(this.canvas.getBoundingClientRect().width)
     
-    // const drawWindow = getComputedStyle(this.canvas);
-    // this.canvas.height = parseInt(drawWindow.getPropertyValue("width"));
-    // this.canvas.width = parseInt(drawWindow.getPropertyValue("height"));
-    // this.ctx.fillRect(498, 498, this.canvas.width, this.canvas.height);
+  //   const drawWindow = getComputedStyle(this.canvas);
+  //   this.canvas.height = parseInt(drawWindow.getPropertyValue("width"));
+  //   this.canvas.width = parseInt(drawWindow.getPropertyValue("height"));
+  //   this.ctx.fillRect(498, 498, this.canvas.width, this.canvas.height);
     
   },
   methods: {
@@ -67,6 +78,7 @@ export default {
       this.drawing = true;
       this.draw(e);
       console.log('drawing')
+      
     },
     stopDrawing(){
       this.drawing = false;
@@ -75,15 +87,20 @@ export default {
     },
     draw(e){
       if(!this.drawing) return;
+      console.log(this.mouse.x)
+      console.log(this.mouse.y)
+
+      this.mouse.x = this.e.pageX - this.offsetLeft;
+      this.mouse.y = this.e.pageY - this.offsetTop;
+
       console.log(e)
-      this.ctx.lineTo(e.clientX,e.clientY)
+      this.ctx.lineTo(this.mouse.x, this.mouse.y);
       this.ctx.stroke()
 
       this.ctx.beginPath()
-      this.ctx.moveTo(e.clientX,e.clientY)
-      console.log(this.ctx)
-      console.log(this.canvas.width)
-      console.log(this.canvas.height)
+      this.ctx.moveTo(this.mouse.x, this.mouse.y);
+
+
     },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
@@ -96,8 +113,8 @@ export default {
 .canvas-wrap {
   border: 2px dashed #222222;
   border-radius: 10px;
-  width: 500px;
-  height: 500px;
+  /* width: 500px;
+  height: 500px; */
   background: white;
   grid-area: canvas;
   margin: 2rem 0;
@@ -123,11 +140,6 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-.draw {
-  /*might prevent mobile drawing to prevent refresh, scrolling or pinching gestures not 10000% sure tho*/
-  -ms-touch-action: none;
-  touch-action: none;
-}
 
 .draw-options {
   display: flex;
