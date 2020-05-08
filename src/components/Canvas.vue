@@ -22,7 +22,7 @@
         ???
       </button>
       <button class="clear" id="clear" v-on:click="clear">Clear</button>
-      <button class="save" id="save">Save</button>
+      <button class="save" id="save" v-on:click="save">Save</button>
     </div>
 
     <Gallery />
@@ -31,6 +31,8 @@
 
 <script>
 import Gallery from "./Gallery.vue";
+import firebase from "../../firebase";
+
 
 export default {
   name: "Canvas",
@@ -88,8 +90,6 @@ export default {
     getColor(e){
       const color = e.currentTarget.value;
       this.ctx.strokeStyle = color;
-      console.log(color)
-      console.log(this.ctx.strokeStyle)
     },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
@@ -105,6 +105,34 @@ export default {
         color += letters[Math.floor(Math.random() * 16)];
       }
       return (this.ctx.strokeStyle = color);
+    },
+    async save(){
+        // const blankCanvas = document.getElementById("blank").toDataURL();
+
+        const storageRef = firebase.storage().ref();
+        const id = this.generateID();
+        /*save canvas image as data url (png format by default)*/
+        const dataURL = this.canvas.toDataURL();
+
+        /*if canvas not empty - we save to db - just kidding not working, dataURL is not updating properly so I can't*/
+        // if (blankCanvas !== dataURL) {
+        /*Get the data url, and transform to blob, then pass to firebase storage*/
+        document.getElementById("save").disabled = false;
+        await fetch(dataURL)
+          .then(res => res.blob())
+          .then(res => storageRef.child(id).put(res))
+          .catch(err => {
+            console.log(err);
+          });
+        location.reload(); /*reload page after canvas cleared*/
+        return false;
+    },
+      /*CREATE A RANDOM ID FOR FB STORAGE*/
+    generateID() {
+      let id = Math.random()
+        .toString(36)
+        .substring(7);
+      return id;
     }
   }
 };
