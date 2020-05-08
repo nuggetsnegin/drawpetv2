@@ -43,7 +43,6 @@ export default {
       drawing: false,
       startX: 0,
       startY: 0,
-      points: [],
     }
   },
   mounted(){
@@ -80,11 +79,6 @@ export default {
       this.startX = x;
       this.startY = y;
 
-      this.points.push({
-        x: x,
-        y: y
-      });
-
       this.drawing = true;
       this.draw(e);
       
@@ -109,13 +103,6 @@ export default {
 
       this.startX = x;
       this.startY = y;
-
-      this.points.push({
-        x: x,
-        y: y
-      });
-
-
     },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
