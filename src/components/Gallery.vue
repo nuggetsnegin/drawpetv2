@@ -1,7 +1,7 @@
 /* eslint-disable vue/require-v-for-key */
 <template>
   <aside class="gallery-wrapper">
-    <h2>Gallery</h2>
+    <h2><span>Pet</span> Gallery</h2>
     <ul class="gallery-list">
       <li class="gallery-item vibrate" id="gallery">
       </li>
@@ -43,7 +43,6 @@ export default {
 .gallery-wrapper {
   margin: 10px;
   grid-area: gallery;
-  border: 1px solid red;
 }
 
 .gallery-wrapper li {
@@ -53,9 +52,14 @@ export default {
 }
 
 img{
-  border: 1px solid pink;
   margin: 5px;
   background: white;
+  border-radius: 25px;
+}
+
+span{
+  color: #f0df45;
+  -webkit-text-stroke: 2px #222222;
 }
 
 .vibrate {
@@ -64,7 +68,8 @@ img{
 }
 
 h2{
-  font-size: 4.5rem;
+  font-size: 4rem;
+  text-align: right;
   text-transform: uppercase;
   padding-bottom: 20px;
   -webkit-text-stroke: 3px white;

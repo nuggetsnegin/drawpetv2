@@ -29,7 +29,6 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 2px solid green;
   min-width: 700px;
 }
 
