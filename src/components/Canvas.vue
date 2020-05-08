@@ -101,11 +101,19 @@ export default {
 
       if(!this.drawing) return;
 
-      this.ctx.lineTo(this.startX, this.startY);
+      this.ctx.lineTo(x, y);
       this.ctx.stroke()
 
       this.ctx.beginPath()
-      this.ctx.moveTo(x, y);
+      this.ctx.moveTo(this.startX, this.startY);
+
+      this.startX = x;
+      this.startY = y;
+
+      this.points.push({
+        x: x,
+        y: y
+      });
 
 
     },
