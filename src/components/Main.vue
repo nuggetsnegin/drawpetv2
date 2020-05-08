@@ -24,15 +24,13 @@ export default {
 
 <style scoped>
 
-main {
-  flex: 1 0 auto;
-}
-
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: 2px solid green;
+  min-width: 700px;
 }
 
 h1 {
@@ -51,13 +49,6 @@ h1 .accent {
 span {
   color: #f0df45;
   -webkit-text-stroke: 0.8px #222222;
-}
-
-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
 }
 
 p {

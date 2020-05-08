@@ -1,6 +1,7 @@
 /* eslint-disable vue/require-v-for-key */
 <template>
   <aside class="gallery-wrapper">
+    <h2>Gallery</h2>
     <ul class="gallery-list">
       <li class="gallery-item vibrate" id="gallery">
       </li>
@@ -40,19 +41,33 @@ export default {
 
 <style>
 .gallery-wrapper {
+  margin: 10px;
   grid-area: gallery;
   border: 1px solid red;
 }
 
 .gallery-wrapper li {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
+}
+
+img{
+  border: 1px solid pink;
+  margin: 5px;
+  background: white;
 }
 
 .vibrate {
   -webkit-animation: vibrate-3 3s linear infinite alternate both;
   animation: vibrate-3 3s linear infinite alternate both;
+}
+
+h2{
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  -webkit-text-stroke: 3px white;
 }
 
 /* ----------------------------------------------
