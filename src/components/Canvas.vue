@@ -12,6 +12,7 @@
           type="color"
           id="color-selection"
           class="color-selection"
+          @change="this.getColor"
         />
       </button>
       <button class="eraser" id="eraser" v-on:click="erase">
@@ -84,6 +85,12 @@ export default {
       this.startX = x;
       this.startY = y;
     },
+    getColor(e){
+      const color = e.currentTarget.value;
+      this.ctx.strokeStyle = color;
+      console.log(color)
+      console.log(this.ctx.strokeStyle)
+    },
     clear(){
       this.ctx.clearRect(0, 0, 500, 500);
       this.drawing = false;
@@ -107,8 +114,6 @@ export default {
 .canvas-wrap {
   border: 2px dashed #222222;
   border-radius: 10px;
-  /* width: 500px;
-  height: 500px; */
   background: white;
   grid-area: canvas;
   margin: 2rem 0;
