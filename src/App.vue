@@ -1,19 +1,22 @@
 <template>
   <div id="app">
     <Main />
+    <Gallery />
     <Footer />
   </div>
 </template>
 
 <script>
 import Main from './components/Main.vue'
+import Gallery from "./components/Gallery.vue";
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Main, 
-    Footer
+    Footer,
+    Gallery
   }
 }
 </script>

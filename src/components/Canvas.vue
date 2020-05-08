@@ -30,15 +30,12 @@
 </template>
 
 <script>
-import Gallery from "./Gallery.vue";
+
 import firebase from "../../firebase";
 
 
 export default {
   name: "Canvas",
-  components:{
-    Gallery
-  },
   data: function() {
     return{
       canvas: null,
@@ -108,7 +105,6 @@ export default {
     },
     async save(){
         // const blankCanvas = document.getElementById("blank").toDataURL();
-
         const storageRef = firebase.storage().ref();
         const id = this.generateID();
         /*save canvas image as data url (png format by default)*/
@@ -138,7 +134,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .canvas-wrap {
   border: 2px dashed #222222;
   border-radius: 10px;
@@ -181,12 +177,13 @@ button:focus {
 }
 
 .settings-canvas-grid {
+  z-index: 111;
   display: grid;
-  gap: 2px;
+  gap: 5px;
   grid-template-rows: auto;
   grid-template-areas: 
-  "color canvas canvas gallery"
-  "color canvas canvas gallery";
+  ". color canvas"
+  ". color canvas";
 }
 
 .color-selection {

@@ -39,16 +39,17 @@ export default {
 </script>
 
 <style>
-.gallery-wrapper {
+/* .gallery-wrapper {
   grid-area: gallery;
   border: 1px solid red;
-}
+} */
 
-.gallery-wrapper li {
-  
-  /* display: grid;
-  grid-template-columns: repeat(3, min-content);
-  grid-template-rows: auto;
-  margin: 2px; */
+.gallery-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  opacity: .7;
 }
 </style>
