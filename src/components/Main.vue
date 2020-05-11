@@ -75,7 +75,8 @@ span {
 }
 
 p {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-left: 240px;
   width: 50%;
   background: white;
   color: black;

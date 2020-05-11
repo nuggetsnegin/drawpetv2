@@ -1,7 +1,16 @@
 <template>
   <div class="settings-canvas-grid">
     <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="canvas" class="draw" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" height="500" width="500" ref="canvas"></canvas>
+      <canvas
+        id="canvas"
+        class="draw"
+        @mousedown="startDrawing"
+        @mouseup="stopDrawing"
+        @mousemove="draw"
+        height="500"
+        width="500"
+        ref="canvas"
+      ></canvas>
     </div>
 
     <div class="draw-options">
@@ -18,11 +27,39 @@
       <button class="eraser" id="eraser" v-on:click="erase">
         Eraser
       </button>
-      <button class="random-color" id="random-color" v-on:click="getRandomColor">
+      <button
+        class="random-color"
+        id="random-color"
+        v-on:click="getRandomColor"
+      >
         ???
       </button>
       <button class="clear" id="clear" v-on:click="clear">Clear</button>
       <button class="save" id="save" v-on:click="save">Save</button>
+    </div>
+
+    <div class="quick-colors" id="colors">
+      <button class="color-1 box"></button>
+      <button class="color-2 box"></button>
+      <button class="color-3 box"></button>
+      <button class="color-4 box"></button>
+      <button class="color-5 box"></button>
+      <button class="color-6 box"></button>
+      <button class="color-7 box"></button>
+      <button class="color-8 box"></button>
+      <button class="color-9 box"></button>
+      <button class="color-10 box"></button>
+      <button class="color-11 box"></button>
+      <button class="color-12 box"></button>
+      <button class="color-13 box"></button>
+      <button class="color-14 box"></button>
+      <button class="color-15 box"></button>
+      <button class="color-16 box"></button>
+      <button class="color-17 box"></button>
+      <button class="color-19 box"></button>
+      <button class="color-20 box"></button>
+      <button class="color-21 box"></button>
+      <button class="color-22 box"></button>
     </div>
 
     <Gallery />
@@ -30,30 +67,28 @@
 </template>
 
 <script>
-
 import firebase from "../../firebase";
-
 
 export default {
   name: "Canvas",
   data: function() {
-    return{
+    return {
       canvas: null,
       ctx: null,
       drawing: false,
       startX: 0,
       startY: 0,
-    }
+    };
   },
-  mounted(){
+  mounted() {
     this.canvas = this.$refs.canvas;
     this.ctx = this.canvas.getContext("2d");
     this.ctx.lineWidth = 10;
-    this.ctx.lineCap ="round";
+    this.ctx.lineCap = "round";
     this.ctx.lineJoin = "round";
   },
   methods: {
-    startDrawing(e){
+    startDrawing(e) {
       const rect = this.canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -64,38 +99,38 @@ export default {
       this.drawing = true;
       this.draw(e);
     },
-    stopDrawing(){
+    stopDrawing() {
       this.drawing = false;
-      this.ctx.beginPath()
+      this.ctx.beginPath();
     },
-    draw(e){
+    draw(e) {
       const rect = this.canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      if(!this.drawing) return;
+      if (!this.drawing) return;
 
       this.ctx.lineTo(x, y);
-      this.ctx.stroke()
+      this.ctx.stroke();
 
-      this.ctx.beginPath()
+      this.ctx.beginPath();
       this.ctx.moveTo(this.startX, this.startY);
 
       this.startX = x;
       this.startY = y;
     },
-    getColor(e){
+    getColor(e) {
       const color = e.currentTarget.value;
       this.ctx.strokeStyle = color;
     },
-    clear(){
+    clear() {
       this.ctx.clearRect(0, 0, 500, 500);
       this.drawing = false;
     },
-    erase(){
+    erase() {
       this.ctx.strokeStyle = "white";
     },
-    getRandomColor(){
+    getRandomColor() {
       let letters = "0123456789ABCDEF";
       let color = "#";
       for (let i = 0; i < 6; i++) {
@@ -103,34 +138,34 @@ export default {
       }
       return (this.ctx.strokeStyle = color);
     },
-    async save(){
-        // const blankCanvas = document.getElementById("blank").toDataURL();
-        const storageRef = firebase.storage().ref();
-        const id = this.generateID();
-        /*save canvas image as data url (png format by default)*/
-        const dataURL = this.canvas.toDataURL();
+    async save() {
+      // const blankCanvas = document.getElementById("blank").toDataURL();
+      const storageRef = firebase.storage().ref();
+      const id = this.generateID();
+      /*save canvas image as data url (png format by default)*/
+      const dataURL = this.canvas.toDataURL();
 
-        /*if canvas not empty - we save to db - just kidding not working, dataURL is not updating properly so I can't*/
-        // if (blankCanvas !== dataURL) {
-        /*Get the data url, and transform to blob, then pass to firebase storage*/
-        document.getElementById("save").disabled = false;
-        await fetch(dataURL)
-          .then(res => res.blob())
-          .then(res => storageRef.child(id).put(res))
-          .catch(err => {
-            console.log(err);
-          });
-        location.reload(); /*reload page after canvas cleared*/
-        return false;
+      /*if canvas not empty - we save to db - just kidding not working, dataURL is not updating properly so I can't*/
+      // if (blankCanvas !== dataURL) {
+      /*Get the data url, and transform to blob, then pass to firebase storage*/
+      document.getElementById("save").disabled = false;
+      await fetch(dataURL)
+        .then((res) => res.blob())
+        .then((res) => storageRef.child(id).put(res))
+        .catch((err) => {
+          console.log(err);
+        });
+      location.reload(); /*reload page after canvas cleared*/
+      return false;
     },
-      /*CREATE A RANDOM ID FOR FB STORAGE*/
+    /*CREATE A RANDOM ID FOR FB STORAGE*/
     generateID() {
       let id = Math.random()
         .toString(36)
         .substring(7);
       return id;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -163,7 +198,6 @@ button:focus {
   transition: all 0.3s ease;
 }
 
-
 .draw-options {
   display: flex;
   flex-direction: column;
@@ -181,9 +215,10 @@ button:focus {
   display: grid;
   gap: 5px;
   grid-template-rows: auto;
-  grid-template-areas: 
-  "color canvas"
-  "color canvas"
+  grid-template-areas:
+    "color canvas"
+    "color canvas"
+    "box box";
 }
 
 .color-selection {
@@ -205,5 +240,14 @@ button:focus {
 .color-selection::-moz-color-swatch {
   border: none;
   border-radius: 100%;
+}
+
+.box {
+  width: 10px;
+  height: 10px;
+}
+
+.quick-colors {
+  grid-area: box;
 }
 </style>
