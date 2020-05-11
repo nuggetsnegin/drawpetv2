@@ -216,9 +216,9 @@ button:focus {
   gap: 5px;
   grid-template-rows: auto;
   grid-template-areas:
-    "color canvas"
-    "color canvas"
-    "box box";
+    "color canvas canvas"
+    "color canvas canvas"
+    "box box box";
 }
 
 .color-selection {
