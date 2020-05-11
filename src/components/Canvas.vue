@@ -46,8 +46,8 @@
       <button class="color-6 box" style="background: rgb(112, 110, 235)" @click="this.getQuickColor"></button>
       <button class="color-7 box" style="background:rgb(232, 120, 68)" @click="this.getQuickColor"></button>
       <button class="color-8 box" style="background:rgb(240, 72, 86)" @click="this.getQuickColor"></button>
-       <button class="color-9 box" style="background: #0B4F6C" @click="this.getQuickColor"></button>
-     <button class="color-10 box" style="background: #1E3231" @click="this.getQuickColor"></button>
+      <button class="color-9 box" style="background: #0B4F6C" @click="this.getQuickColor"></button>
+      <button class="color-10 box" style="background: #1E3231" @click="this.getQuickColor"></button>
       <button class="color-11 box" style="background: #5B5941" @click="this.getQuickColor"></button>
       <button class="color-12 box" style="background: #2C2C54" @click="this.getQuickColor"></button>
       <button class="color-13 box" style="background: #DABECA" @click="this.getQuickColor"></button>
@@ -260,5 +260,6 @@ button:focus {
 .quick-colors {
   grid-area: box;
   width: 650px;
+  margin-left: 55px;
 }
 </style>

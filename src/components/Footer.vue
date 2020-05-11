@@ -10,7 +10,6 @@ export default {
 
 <style scoped>
 footer {
-  margin-top: 5rem;
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
