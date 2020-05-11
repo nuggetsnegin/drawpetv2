@@ -38,10 +38,10 @@
     </div>
 
     <div class="quick-colors" id="colors">
-      <button class="color-1 box"></button>
-      <button class="color-2 box"></button>
-      <button class="color-3 box"></button>
-      <button class="color-4 box"></button>
+      <button class="color-1 box" @click="this.getQuickColor"></button>
+      <button class="color-2 box" @click="this.getQuickColor"></button>
+      <button class="color-3 box" @click="this.getQuickColor"></button>
+      <button class="color-4 box" @click="this.getQuickColor"></button>
       <button class="color-5 box"></button>
       <button class="color-6 box"></button>
       <button class="color-7 box"></button>
@@ -59,8 +59,6 @@
       <button class="color-20 box"></button>
       <button class="color-21 box"></button>
     </div>
-
-    <Gallery />
   </div>
 </template>
 
@@ -119,6 +117,11 @@ export default {
     },
     getColor(e) {
       const color = e.currentTarget.value;
+      this.ctx.strokeStyle = color;
+    },
+    getQuickColor(e){
+      const color = e.style.backgroundColor;
+      console.log(e.style.backgroundColor);
       this.ctx.strokeStyle = color;
     },
     clear() {
@@ -253,11 +256,11 @@ button:focus {
 }
 
 .color-1{
-  background: rgb(68, 67, 67);
+  background-color: rgb(68, 67, 67);
 }
 
 .color-2{
-  background: rgb(228, 129, 231);
+  background-color: rgb(228, 129, 231);
 }
 
 .color-3{
