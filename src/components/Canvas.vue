@@ -19,7 +19,6 @@
         ><input
           name="color-selection"
           type="color"
-          id="color-selection"
           class="color-selection"
           @change="this.getColor"
         />
@@ -59,7 +58,6 @@
       <button class="color-19 box"></button>
       <button class="color-20 box"></button>
       <button class="color-21 box"></button>
-      <button class="color-22 box"></button>
     </div>
 
     <Gallery />
@@ -251,5 +249,46 @@ button:focus {
 
 .quick-colors {
   grid-area: box;
+  width: 650px;
+}
+
+.color-1{
+  background: rgb(68, 67, 67);
+}
+
+.color-2{
+  background: rgb(228, 129, 231);
+}
+
+.color-3{
+  background:rgb(106, 202, 130);
+}
+
+.color-4{
+  background:rgb(240, 237, 99);
+}
+
+.color-5{
+  background:rgb(139, 66, 207);
+}
+
+.color-6{
+  background: rgb(112, 110, 235);
+}
+
+.color-7{
+  background:rgb(232, 120, 68);
+}
+
+.color-8{
+  background:rgb(240, 72, 86);
+}
+
+.color-9{
+  background:rgb(74, 169, 233);
+}
+
+.color-10{
+  background:rgb(106, 202, 130);
 }
 </style>
