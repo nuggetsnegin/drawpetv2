@@ -34,7 +34,7 @@
         ???
       </button>
       <button class="clear" id="clear" v-on:click="clear">Clear</button>
-      <button class="save" id="save" v-on:click="save">Save</button>
+      <button class="save" id="save" v-on:click="save" disabled>Save</button>
     </div>
 
     <div class="quick-colors" id="colors">
@@ -138,6 +138,13 @@ export default {
       }
       return (this.ctx.strokeStyle = color);
     },
+    getCanvas(canvas){
+      /*src: https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank*/
+      const pixelBuffer = new Uint32Array(
+        this.ctx.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+      );
+      return !pixelBuffer.some((color) => color !==0);
+    },
     async save() {
       // const blankCanvas = document.getElementById("blank").toDataURL();
       const storageRef = firebase.storage().ref();
@@ -145,9 +152,6 @@ export default {
       /*save canvas image as data url (png format by default)*/
       const dataURL = this.canvas.toDataURL();
 
-      /*if canvas not empty - we save to db - just kidding not working, dataURL is not updating properly so I can't*/
-      // if (blankCanvas !== dataURL) {
-      /*Get the data url, and transform to blob, then pass to firebase storage*/
       document.getElementById("save").disabled = false;
       await fetch(dataURL)
         .then((res) => res.blob())
@@ -158,7 +162,7 @@ export default {
       location.reload(); /*reload page after canvas cleared*/
       return false;
     },
-    /*CREATE A RANDOM ID FOR FB STORAGE*/
+    /*create random id for fb storage*/
     generateID() {
       let id = Math.random()
         .toString(36)
