@@ -1,6 +1,6 @@
 <template>
   <main class="wrapper">
-    <h1>Draw my <span class="accent">Pet</span></h1>
+    <header><span class="draw-icon">✏</span><h1>Draw my <span class="accent">Pet</span></h1><span class="window-icons"><i class="fas fa-window-minimize"></i><i class="far fa-window-maximize"></i><i class="fas fa-times"></i></span></header>
     <p>
       Draw your <span class="accent">pet</span> (imaginary or real) in the
       canvas below! Use the <span class="accent">save</span> feature so the
@@ -27,17 +27,37 @@ export default {
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   min-width: 700px;
+  border: 1px solid black;
+  background: #E0E3EF;
+}
+
+header{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    min-width: 805px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
+}
+
+.window-icons{
+  display: block;
+  float: right;
+}
+
+.draw-icon{
+  padding: 10px;
 }
 
 h1 {
-  text-align: center;
+  padding-top: 10px;
+  text-align: left;
   text-transform: uppercase;
-  -webkit-text-stroke: 3px white;
-  font-size: 4rem;
-  margin: 2rem 0;
+  /* -webkit-text-stroke: 3px white; */
+  font-size: 1rem;
+  /* margin: 2rem 0; */
 }
 
 h1 .accent {
