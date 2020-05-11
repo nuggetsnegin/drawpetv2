@@ -20,7 +20,9 @@ Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-s
 
 ## Stretch Goals
 * ~~Implement Firebase storage~~
-* Prevent empty canvas to be uploaded
+* ~~Redesign UI~~
+* ~~Add quick colors~~
+* ~~Prevent empty canvas to be uploaded~~
 * ~~Figure out weird bug where if you take too long to draw does not save to firebase? :( I needed async (ty simon😊!)~~
 * Pagination of images
 * ~~Color picker - this is ezpz pls implement soon Negin 8(~~
