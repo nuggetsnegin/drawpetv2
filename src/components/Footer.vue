@@ -10,10 +10,8 @@ export default {
 
 <style scoped>
 footer {
-  padding: 5px 0px;
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
-  background-color: #f0df45;
 }
 </style>

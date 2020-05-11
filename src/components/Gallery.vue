@@ -1,12 +1,20 @@
-/* eslint-disable vue/require-v-for-key */
 <template>
-  <aside class="gallery-wrapper">
-    <h2><span>Pet</span> Gallery</h2>
-    <ul class="gallery-list">
-      <li class="gallery-item vibrate" id="gallery">
-      </li>
-    </ul>
-  </aside>
+  <div class="gallery">
+    <header class="gallery-header">
+      <span class="draw-icon">🐕</span>
+      <h2 class="gallery-text">Gallery</h2>
+      <span class="window-icons"
+        ><i class="fas fa-window-minimize"></i
+        ><i class="far fa-window-maximize"></i><i class="fas fa-times"></i
+      ></span>
+    </header>
+
+    <aside class="gallery-wrapper">
+      <ul class="gallery-list">
+        <li class="gallery-item vibrate" id="gallery"></li>
+      </ul>
+    </aside>
+  </div>
 </template>
 
 <script>
@@ -14,7 +22,7 @@ import firebase from "../../firebase";
 
 export default {
   name: "Gallery",
-  mounted(){
+  mounted() {
     // Create a root reference
     const storageRef = firebase.storage().ref();
     const node = document.createElement("LI");
@@ -24,7 +32,7 @@ export default {
     /*grab all the images' download URLS from firebase storage and then call displayImage*/
     allImages.then(function(result) {
       result.items.forEach(function(imageRef) {
-        imageRef.getDownloadURL().then(result => {
+        imageRef.getDownloadURL().then((result) => {
           const retrievedImage = result;
           const img = new Image(130, 130);
           img.src = retrievedImage;
@@ -40,6 +48,30 @@ export default {
 </script>
 
 <style>
+.gallery{
+  border: 1px solid
+}
+
+.gallery-header{
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(42, 42, 44);
+  margin-bottom: 1rem;
+}
+
+.window-icons {
+  padding: 10px;
+}
+
+.draw-icon {
+  padding: 10px;
+}
+
+.fas {
+  padding: 5px;
+}
+
 .gallery-wrapper {
   margin: 10px;
   grid-area: gallery;
@@ -51,15 +83,15 @@ export default {
   grid-template-rows: auto;
 }
 
-img{
+img {
   margin: 5px;
   background: white;
   border-radius: 25px;
 }
 
-span{
+span {
   color: #f0df45;
-  -webkit-text-stroke: 2px #222222;
+  -webkit-text-stroke: 0.5px #222222;
 }
 
 .vibrate {
@@ -67,12 +99,13 @@ span{
   animation: vibrate-3 3s linear infinite alternate both;
 }
 
-h2{
-  font-size: 4rem;
-  text-align: right;
+.gallery-text {
+  font-size: 1rem;
+  color: white;
+  text-align: center;
   text-transform: uppercase;
-  padding-bottom: 20px;
-  -webkit-text-stroke: 3px white;
+  padding: 10px;
+  /* -webkit-text-stroke: 3px white; */
 }
 
 /* ----------------------------------------------
