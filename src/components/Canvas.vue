@@ -146,7 +146,6 @@ export default {
       return !pixelBuffer.some((color) => color !==0);
     },
     async save() {
-      // const blankCanvas = document.getElementById("blank").toDataURL();
       const storageRef = firebase.storage().ref();
       const id = this.generateID();
       /*save canvas image as data url (png format by default)*/
