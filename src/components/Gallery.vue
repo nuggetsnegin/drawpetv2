@@ -1,7 +1,5 @@
-/* eslint-disable vue/require-v-for-key */
 <template>
   <aside class="gallery-wrapper">
-    <h2><span>Pet</span> Gallery</h2>
     <ul class="gallery-list">
       <li class="gallery-item vibrate" id="gallery">
       </li>
