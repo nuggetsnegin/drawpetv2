@@ -176,6 +176,8 @@ export default {
   background: white;
   grid-area: canvas;
   margin: 2rem 0;
+  width: 500px;
+  height: 500px;
 }
 
 button {
