@@ -1,8 +1,8 @@
 <template>
   <div class="gallery">
-    <header>
+    <header class="gallery-header">
       <span class="draw-icon">🐕</span>
-      <h2>Gallery</h2>
+      <h2 class="gallery-text">Gallery</h2>
       <span class="window-icons"
         ><i class="fas fa-window-minimize"></i
         ><i class="far fa-window-maximize"></i><i class="fas fa-times"></i
@@ -48,18 +48,19 @@ export default {
 </script>
 
 <style>
-header {
+.gallery{
+  border: 1px solid black;
+}
+
+.gallery-header{
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
-  min-width: 805px;
-  background: black;
+  background: rgb(172, 177, 253);
   margin-bottom: 1rem;
 }
 
 .window-icons {
-  display: block;
-  float: right;
   padding: 10px;
 }
 
@@ -67,8 +68,8 @@ header {
   padding: 10px;
 }
 
-i {
-  padding-left: 6px;
+.fas {
+  padding: 5px;
 }
 
 .gallery-wrapper {
@@ -90,7 +91,7 @@ img {
 
 span {
   color: #f0df45;
-  -webkit-text-stroke: 2px #222222;
+  -webkit-text-stroke: 0.5px #222222;
 }
 
 .vibrate {
@@ -98,12 +99,12 @@ span {
   animation: vibrate-3 3s linear infinite alternate both;
 }
 
-h2 {
-  font-size: 2rem;
+.gallery-text {
+  font-size: 1rem;
   color: white;
   text-align: center;
   text-transform: uppercase;
-  /* padding-bottom: 20px; */
+  padding: 10px;
   /* -webkit-text-stroke: 3px white; */
 }
 

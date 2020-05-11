@@ -39,12 +39,10 @@ header{
     display: flex;
     justify-content: space-between;
     min-width: 805px;
-    background: black;
+    background: rgb(54, 54, 54);
 }
 
 .window-icons{
-  display: block;
-  float: right;
   padding: 10px;
 }
 

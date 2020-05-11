@@ -29,10 +29,11 @@ export default {
   font-family: "Fredoka One", cursive;
   display: grid;
   height: 100vh;
+  gap: 20px;
   grid-template-areas: 
-  "canvas canvas gallery"
-  "footer footer footer";
-  grid-template-columns: auto;
+  "canvas gallery"
+  "footer footer";
+  grid-template-columns: repeat(2, min-content);
   grid-template-rows: auto;
 }
 .canvas{
