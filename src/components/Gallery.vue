@@ -49,14 +49,14 @@ export default {
 
 <style>
 .gallery{
-  border: 1px solid black;
+  border: 1px solid
 }
 
 .gallery-header{
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  background: rgb(172, 177, 253);
+  background: rgb(42, 42, 44);
   margin-bottom: 1rem;
 }
 
