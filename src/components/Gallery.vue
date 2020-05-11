@@ -1,10 +1,20 @@
 <template>
-  <aside class="gallery-wrapper">
-    <ul class="gallery-list">
-      <li class="gallery-item vibrate" id="gallery">
-      </li>
-    </ul>
-  </aside>
+  <div class="gallery">
+    <header>
+      <span class="draw-icon">🐕</span>
+      <h2>Gallery</h2>
+      <span class="window-icons"
+        ><i class="fas fa-window-minimize"></i
+        ><i class="far fa-window-maximize"></i><i class="fas fa-times"></i
+      ></span>
+    </header>
+
+    <aside class="gallery-wrapper">
+      <ul class="gallery-list">
+        <li class="gallery-item vibrate" id="gallery"></li>
+      </ul>
+    </aside>
+  </div>
 </template>
 
 <script>
@@ -12,7 +22,7 @@ import firebase from "../../firebase";
 
 export default {
   name: "Gallery",
-  mounted(){
+  mounted() {
     // Create a root reference
     const storageRef = firebase.storage().ref();
     const node = document.createElement("LI");
@@ -22,7 +32,7 @@ export default {
     /*grab all the images' download URLS from firebase storage and then call displayImage*/
     allImages.then(function(result) {
       result.items.forEach(function(imageRef) {
-        imageRef.getDownloadURL().then(result => {
+        imageRef.getDownloadURL().then((result) => {
           const retrievedImage = result;
           const img = new Image(130, 130);
           img.src = retrievedImage;
@@ -38,6 +48,29 @@ export default {
 </script>
 
 <style>
+header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  min-width: 805px;
+  background: black;
+  margin-bottom: 1rem;
+}
+
+.window-icons {
+  display: block;
+  float: right;
+  padding: 10px;
+}
+
+.draw-icon {
+  padding: 10px;
+}
+
+i {
+  padding-left: 6px;
+}
+
 .gallery-wrapper {
   margin: 10px;
   grid-area: gallery;
@@ -49,13 +82,13 @@ export default {
   grid-template-rows: auto;
 }
 
-img{
+img {
   margin: 5px;
   background: white;
   border-radius: 25px;
 }
 
-span{
+span {
   color: #f0df45;
   -webkit-text-stroke: 2px #222222;
 }
@@ -65,12 +98,13 @@ span{
   animation: vibrate-3 3s linear infinite alternate both;
 }
 
-h2{
-  font-size: 4rem;
-  text-align: right;
+h2 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
   text-transform: uppercase;
-  padding-bottom: 20px;
-  -webkit-text-stroke: 3px white;
+  /* padding-bottom: 20px; */
+  /* -webkit-text-stroke: 3px white; */
 }
 
 /* ----------------------------------------------
