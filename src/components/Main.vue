@@ -31,6 +31,7 @@ export default {
   min-width: 700px;
   border: 1px solid black;
   background: #E0E3EF;
+  color: white;
 }
 
 header{
@@ -38,17 +39,21 @@ header{
     display: flex;
     justify-content: space-between;
     min-width: 805px;
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
+    background: black;
 }
 
 .window-icons{
   display: block;
   float: right;
+  padding: 10px;
 }
 
 .draw-icon{
   padding: 10px;
+}
+
+i{
+  padding-left: 6px;
 }
 
 h1 {
@@ -62,7 +67,6 @@ h1 {
 
 h1 .accent {
   color: #f0df45;
-  -webkit-text-stroke: 2px #222222;
 }
 
 span {
@@ -71,10 +75,14 @@ span {
 }
 
 p {
+  margin-top: 1rem;
+  width: 50%;
   background: white;
+  color: black;
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 25px;
   text-align: center;
 }
+
 </style>
