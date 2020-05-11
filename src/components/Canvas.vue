@@ -38,7 +38,7 @@
     </div>
 
     <div class="quick-colors" id="colors">
-      <button class="color-1 box" @click="this.getQuickColor"></button>
+      <button class="color-1 box" style="background: rgb(68, 67, 67)" @click="this.getQuickColor"></button>
       <button class="color-2 box" @click="this.getQuickColor"></button>
       <button class="color-3 box" @click="this.getQuickColor"></button>
       <button class="color-4 box" @click="this.getQuickColor"></button>
@@ -120,8 +120,8 @@ export default {
       this.ctx.strokeStyle = color;
     },
     getQuickColor(e){
-      const color = e.style.backgroundColor;
-      console.log(e.style.backgroundColor);
+      const color = e.currentTarget.style.backgroundColor;
+      console.log(e.currentTarget.style);
       this.ctx.strokeStyle = color;
     },
     clear() {
@@ -255,9 +255,6 @@ button:focus {
   width: 650px;
 }
 
-.color-1{
-  background-color: rgb(68, 67, 67);
-}
 
 .color-2{
   background-color: rgb(228, 129, 231);
