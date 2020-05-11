@@ -34,7 +34,7 @@
         ???
       </button>
       <button class="clear" id="clear" v-on:click="clear">Clear</button>
-      <button class="save" id="save" v-on:click="save" disabled>Save</button>
+      <button class="save" id="save" v-on:click="save">Save</button>
     </div>
 
     <div class="quick-colors" id="colors">
@@ -138,10 +138,10 @@ export default {
       }
       return (this.ctx.strokeStyle = color);
     },
-    getCanvas(canvas){
+    getCanvas(){
       /*src: https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank*/
       const pixelBuffer = new Uint32Array(
-        this.ctx.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+        this.ctx.getImageData(0, 0, 500, 500).data.buffer
       );
       return !pixelBuffer.some((color) => color !==0);
     },
@@ -152,15 +152,20 @@ export default {
       /*save canvas image as data url (png format by default)*/
       const dataURL = this.canvas.toDataURL();
 
-      document.getElementById("save").disabled = false;
-      await fetch(dataURL)
-        .then((res) => res.blob())
-        .then((res) => storageRef.child(id).put(res))
-        .catch((err) => {
-          console.log(err);
-        });
-      location.reload(); /*reload page after canvas cleared*/
-      return false;
+      if(!this.getCanvas(this.canvas.current)){
+        document.getElementById("save").disabled = false;
+        await fetch(dataURL)
+          .then((res) => res.blob())
+          .then((res) => storageRef.child(id).put(res))
+          .catch((err) => {
+            console.log(err);
+          });
+        location.reload(); /*reload page after canvas cleared*/
+        return false;
+      }
+      else{
+        console.log('blank canvas')
+      }
     },
     /*create random id for fb storage*/
     generateID() {
