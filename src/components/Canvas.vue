@@ -39,25 +39,25 @@
 
     <div class="quick-colors" id="colors">
       <button class="color-1 box" style="background: rgb(68, 67, 67)" @click="this.getQuickColor"></button>
-      <button class="color-2 box" @click="this.getQuickColor"></button>
-      <button class="color-3 box" @click="this.getQuickColor"></button>
-      <button class="color-4 box" @click="this.getQuickColor"></button>
-      <button class="color-5 box"></button>
-      <button class="color-6 box"></button>
-      <button class="color-7 box"></button>
-      <button class="color-8 box"></button>
-      <button class="color-9 box"></button>
-      <button class="color-10 box"></button>
-      <button class="color-11 box"></button>
-      <button class="color-12 box"></button>
-      <button class="color-13 box"></button>
-      <button class="color-14 box"></button>
-      <button class="color-15 box"></button>
-      <button class="color-16 box"></button>
-      <button class="color-17 box"></button>
-      <button class="color-19 box"></button>
-      <button class="color-20 box"></button>
-      <button class="color-21 box"></button>
+      <button class="color-2 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-3 box" style="background:rgb(106, 202, 130)" @click="this.getQuickColor"></button>
+      <button class="color-4 box" style="background:rgb(240, 237, 99)" @click="this.getQuickColor"></button>
+      <button class="color-5 box" style="background:rgb(139, 66, 207)" @click="this.getQuickColor"></button>
+      <button class="color-6 box" style="background: rgb(112, 110, 235)" @click="this.getQuickColor"></button>
+      <button class="color-7 box" style="background:rgb(232, 120, 68)" @click="this.getQuickColor"></button>
+      <button class="color-8 box" style="background:rgb(240, 72, 86)" @click="this.getQuickColor"></button>
+      <button class="color-9 box" style="background:rgb(74, 169, 233)" @click="this.getQuickColor"></button>
+      <button class="color-10 box" style="background:rgb(106, 202, 130)" @click="this.getQuickColor"></button>
+      <button class="color-11 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-12 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-13 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-14 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-15 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-16 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-17 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-19 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-20 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
+      <button class="color-21 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
     </div>
   </div>
 </template>
@@ -121,7 +121,6 @@ export default {
     },
     getQuickColor(e){
       const color = e.currentTarget.style.backgroundColor;
-      console.log(e.currentTarget.style);
       this.ctx.strokeStyle = color;
     },
     clear() {
@@ -253,42 +252,5 @@ button:focus {
 .quick-colors {
   grid-area: box;
   width: 650px;
-}
-
-
-.color-2{
-  background-color: rgb(228, 129, 231);
-}
-
-.color-3{
-  background:rgb(106, 202, 130);
-}
-
-.color-4{
-  background:rgb(240, 237, 99);
-}
-
-.color-5{
-  background:rgb(139, 66, 207);
-}
-
-.color-6{
-  background: rgb(112, 110, 235);
-}
-
-.color-7{
-  background:rgb(232, 120, 68);
-}
-
-.color-8{
-  background:rgb(240, 72, 86);
-}
-
-.color-9{
-  background:rgb(74, 169, 233);
-}
-
-.color-10{
-  background:rgb(106, 202, 130);
 }
 </style>
