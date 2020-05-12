@@ -36,7 +36,7 @@ export default {
   flex-direction: column;
   min-width: 700px;
   border: 1px solid black;
-  background: #e0e3ef;
+  background: #dfdcfa;
   color: white;
 }
 

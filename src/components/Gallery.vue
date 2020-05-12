@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <header class="gallery-header">
-      <span class="draw-icon">🐕</span>
+      <span class="draw-icon"></span>
       <h2 class="gallery-text">Gallery</h2>
       <span class="window-icons"
         ><i class="fas fa-window-minimize"></i

@@ -44,97 +44,97 @@
         ></button>
         <button
           class="color-2 box"
-          style="background: rgb(228, 129, 231)"
+          style="background: gray"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-3 box"
-          style="background:rgb(106, 202, 130)"
+          style="background: red"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-4 box"
-          style="background:rgb(240, 237, 99)"
+          style="background: orange"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-5 box"
-          style="background:rgb(139, 66, 207)"
+          style="background: yellow"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-6 box"
-          style="background: rgb(112, 110, 235)"
+          style="background: green"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-7 box"
-          style="background:rgb(232, 120, 68)"
+          style="background: blue"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-8 box"
-          style="background:rgb(240, 72, 86)"
+          style="background: purple"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-9 box"
-          style="background: #0B4F6C"
+          style="background: hotpink"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-10 box"
-          style="background: #1E3231"
+          style="background: white"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-11 box"
-          style="background: #5B5941"
+          style="background: lightsteelblue"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-12 box"
-          style="background: #2C2C54"
+          style="background: saddlebrown"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-13 box"
-          style="background: #DABECA"
+          style="background: honeydew"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-14 box"
-          style="background: #D3D4D9"
+          style="background: lavenderblush"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-15 box"
-          style="background: #C6DEA6"
+          style="background: mediumslateblue"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-16 box"
-          style="background: #DDFDFE"
+          style="background: mediumseagreen"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-17 box"
-          style="background: #FFFEFF"
+          style="background: tomato"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-19 box"
-          style="background: #315659"
+          style="background: turquoise"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-20 box"
-          style="background: #FF01FB"
+          style="background: burlywood"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-21 box"
-          style="background: #26C485"
+          style="background: beige"
           @click="this.getQuickColor"
         ></button>
       </div>
