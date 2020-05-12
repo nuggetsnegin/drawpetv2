@@ -354,11 +354,16 @@ button:focus {
   margin-top: -20px;
 }
 
-@media (max-width: 1435px) {
-  .draw-options {
-    width: 90%;
-    margin-left: 5px;
+@media(max-width: 1060px){
+
+  .quick-colors{
+    margin-top: -80px;
   }
+
+  .settings-canvas-grid{
+    height: 650px;
+  }
+
 }
 
 @media (max-width: 770px) {
@@ -373,16 +378,6 @@ button:focus {
     width: 50%;
     display: grid;
     grid-area: options;
-  }
-
-  .draw-options-quick-colors{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-self: center;
-    align-content: center;
-    border: 1px solid red;
-    width: 500px;
   }
 
   .quick-colors{
