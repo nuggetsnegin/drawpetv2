@@ -56,13 +56,14 @@ export default {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  background: #0D1821;
+  background: #82B3FF;
   margin-bottom: 1rem;
 }
 
 .window-icons {
   padding: 10px;
   color: white;
+  -webkit-text-stroke: .8px black;
 }
 
 .draw-icon {
@@ -106,12 +107,13 @@ span {
 }
 
 .gallery-text {
-  font-size: 1rem;
-  color: white;
-  text-align: center;
+  padding-top: 10px;
+  text-align: left;
   text-transform: uppercase;
-  padding-top: 15px;
-  /* -webkit-text-stroke: 3px white; */
+  -webkit-text-stroke: 1px #3D3B30;
+  font-size: 1.6rem;
+  color: white;
+  letter-spacing: 1px;
 }
 
 /* ----------------------------------------------

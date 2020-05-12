@@ -10,14 +10,18 @@ export default {
 
 <style scoped>
 footer {
-  font-size: 1rem;
+  color: #3D3B30;
+  font-size: 1.3rem;
   text-align: center;
   text-transform: uppercase;
+  margin-top: -10px;
+  padding: 5px;
 }
 
 a{
   text-decoration: none;
-  color: rgb(241, 103, 126); 
+  color: #E7E247;
+  -webkit-text-stroke: 1px #3D3B30;
   letter-spacing: 1px;
 }
 

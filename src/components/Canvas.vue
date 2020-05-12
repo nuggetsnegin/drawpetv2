@@ -114,12 +114,12 @@
         ></button>
         <button
           class="color-16 box"
-          style="background: mediumseagreen"
+          style="background: springgreen"
           @click="this.getQuickColor"
         ></button>
         <button
           class="color-17 box"
-          style="background: tomato"
+          style="background: salmon"
           @click="this.getQuickColor"
         ></button>
         <button
@@ -274,7 +274,7 @@ export default {
 
 <style scoped>
 .canvas-wrap {
-  border: 2px dashed #222222;
+  border: 2px dashed #3D3B30;
   border-radius: 10px;
   background: white;
   grid-area: canvas;
@@ -293,13 +293,14 @@ button {
   padding: 10px 25px;
   margin: 5px;
   text-transform: uppercase;
-  background-color: #f0df45;
+  background-color: #E7E247;
+  color: #3D3B30;
 }
 
 button:hover,
 button:focus {
-  -webkit-box-shadow: 0px 0px 0px 0px black;
-  box-shadow: 0px 0px 0px 0px black;
+  -webkit-box-shadow: 0px 0px 0px 0px #3D3B30;
+  box-shadow: 0px 0px 0px 0px #3D3B30;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -357,7 +358,7 @@ button:focus {
 .box{
   border-radius: 25px;
   padding: 10px;
-  box-shadow: 2px 2px 0px 0px black;
+  box-shadow: 2px 2px 0px 0px #3D3B30;
 }
 
 @media(max-width: 1060px){

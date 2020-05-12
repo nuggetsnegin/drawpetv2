@@ -36,49 +36,49 @@ export default {
   flex-direction: column;
   min-width: 700px;
   border: 1px solid black;
-  background: #dfdcfa;
+  background: rgb(240, 240, 240);
   color: white;
 }
 
 header {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   min-width: 100%;
-  background: #0D1821;
+  background: #E7E247;
+  color: #3D3B30;
 }
 
 .window-icons {
-  padding: 10px;
   color: white;
+  -webkit-text-stroke: .8px black;
 }
 
 .draw-icon {
-  padding: 10px;
+  padding-top: 15px;
   color: white;
-}
-
-i {
-  padding-left: 6px;
+  -webkit-text-stroke: 1px #3D3B30;
 }
 
 h1 {
-  padding-top: 15px;
+  padding-top: 10px;
   text-align: left;
   text-transform: uppercase;
-  /* -webkit-text-stroke: 3px white; */
-  font-size: 1rem;
-  /* margin: 2rem 0; */
+  -webkit-text-stroke: 1px white;
+  font-size: 1.6rem;
+  color: #3D3B30;
 }
 
 h1 .accent {
-  color: #E6AACE;
-  font-size: 1.1rem;
+  color: rgb(108, 159, 247);
+  -webkit-text-stroke: 1px white;
+  font-size: 1.6rem;
+  padding-left: 5px;
 }
 
 p .accent {
-  color: #E6AACE;
-  -webkit-text-stroke: 0.8px #0D1821;
+  color: #E7E247;
+  -webkit-text-stroke: .9px #0D1821;
 }
 
 p {
@@ -86,7 +86,7 @@ p {
   margin-left: 290px;
   width: 50%;
   background: white;
-  color: #0D1821;
+  color: #3D3B30;
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 25px;
