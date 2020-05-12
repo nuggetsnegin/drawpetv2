@@ -53,10 +53,12 @@ export default {
   margin: 0 auto;
 }
 .canvas{
+  margin-top: 10px;
   grid-area: canvas;
 }
 
 .gallery{
+  margin-top: 10px;
   grid-area: gallery;
 }
 
@@ -68,6 +70,38 @@ html, body{
   height: 100vh;
 }
 
+@media (max-width: 1435px){
+
+  .gallery{
+    max-width: 300px;
+  }
+
+  .canvas{
+    max-width: 400px;
+  }
+
+  .gallery-wrapper li {
+    grid-template-columns: repeat(2, min-content);
+  }
+
+@media (max-width: 1060px){
+  #app{
+    grid-template-areas:
+      "canvas"
+      "gallery"
+      "footer";
+  }
+
+  .gallery{
+    max-width: 800px;
+  }
+
+  .gallery-wrapper li {
+    grid-template-columns: repeat(5, min-content);
+  }
+}
+
+}
 body {
   display: flex;
   flex-direction: column;

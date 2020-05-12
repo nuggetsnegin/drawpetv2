@@ -12,59 +12,137 @@
         ref="canvas"
       ></canvas>
     </div>
+      <div class="draw-options">
+        <button class="pencil" id="pencil">
+          <label for="color-selection">Color </label
+          ><input
+            name="color-selection"
+            type="color"
+            class="color-selection"
+            @change="this.getColor"
+          />
+        </button>
+        <button class="eraser" id="eraser" v-on:click="erase">
+          Eraser
+        </button>
+        <button
+          class="random-color"
+          id="random-color"
+          v-on:click="getRandomColor"
+        >
+          ???
+        </button>
+        <button class="clear" id="clear" v-on:click="clear">Clear</button>
+        <button class="save" id="save" v-on:click="save">Save</button>
+      </div>
 
-    <div class="draw-options">
-      <button class="pencil" id="pencil">
-        <label for="color-selection">Color </label
-        ><input
-          name="color-selection"
-          type="color"
-          class="color-selection"
-          @change="this.getColor"
-        />
-      </button>
-      <button class="eraser" id="eraser" v-on:click="erase">
-        Eraser
-      </button>
-      <button
-        class="random-color"
-        id="random-color"
-        v-on:click="getRandomColor"
-      >
-        ???
-      </button>
-      <button class="clear" id="clear" v-on:click="clear">Clear</button>
-      <button class="save" id="save" v-on:click="save">Save</button>
-    </div>
-
-    <div class="quick-colors" id="colors">
-      <button class="color-1 box" style="background: #01BAEF" @click="this.getQuickColor"></button>
-      <button class="color-2 box" style="background: rgb(228, 129, 231)" @click="this.getQuickColor"></button>
-      <button class="color-3 box" style="background:rgb(106, 202, 130)" @click="this.getQuickColor"></button>
-      <button class="color-4 box" style="background:rgb(240, 237, 99)" @click="this.getQuickColor"></button>
-      <button class="color-5 box" style="background:rgb(139, 66, 207)" @click="this.getQuickColor"></button>
-      <button class="color-6 box" style="background: rgb(112, 110, 235)" @click="this.getQuickColor"></button>
-      <button class="color-7 box" style="background:rgb(232, 120, 68)" @click="this.getQuickColor"></button>
-      <button class="color-8 box" style="background:rgb(240, 72, 86)" @click="this.getQuickColor"></button>
-      <button class="color-9 box" style="background: #0B4F6C" @click="this.getQuickColor"></button>
-      <button class="color-10 box" style="background: #1E3231" @click="this.getQuickColor"></button>
-      <button class="color-11 box" style="background: #5B5941" @click="this.getQuickColor"></button>
-      <button class="color-12 box" style="background: #2C2C54" @click="this.getQuickColor"></button>
-      <button class="color-13 box" style="background: #DABECA" @click="this.getQuickColor"></button>
-      <button class="color-14 box" style="background: #D3D4D9" @click="this.getQuickColor"></button>
-      <button class="color-15 box" style="background: #C6DEA6" @click="this.getQuickColor"></button>
-      <button class="color-16 box" style="background: #DDFDFE" @click="this.getQuickColor"></button>
-      <button class="color-17 box" style="background: #FFFEFF" @click="this.getQuickColor"></button>
-      <button class="color-19 box" style="background: #315659" @click="this.getQuickColor"></button>
-      <button class="color-20 box" style="background: #FF01FB" @click="this.getQuickColor"></button>
-      <button class="color-21 box" style="background: #26C485" @click="this.getQuickColor"></button>
-    </div>
+      <div class="quick-colors" id="colors">
+        <button
+          class="color-1 box"
+          style="background: #01BAEF"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-2 box"
+          style="background: rgb(228, 129, 231)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-3 box"
+          style="background:rgb(106, 202, 130)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-4 box"
+          style="background:rgb(240, 237, 99)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-5 box"
+          style="background:rgb(139, 66, 207)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-6 box"
+          style="background: rgb(112, 110, 235)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-7 box"
+          style="background:rgb(232, 120, 68)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-8 box"
+          style="background:rgb(240, 72, 86)"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-9 box"
+          style="background: #0B4F6C"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-10 box"
+          style="background: #1E3231"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-11 box"
+          style="background: #5B5941"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-12 box"
+          style="background: #2C2C54"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-13 box"
+          style="background: #DABECA"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-14 box"
+          style="background: #D3D4D9"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-15 box"
+          style="background: #C6DEA6"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-16 box"
+          style="background: #DDFDFE"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-17 box"
+          style="background: #FFFEFF"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-19 box"
+          style="background: #315659"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-20 box"
+          style="background: #FF01FB"
+          @click="this.getQuickColor"
+        ></button>
+        <button
+          class="color-21 box"
+          style="background: #26C485"
+          @click="this.getQuickColor"
+        ></button>
+      </div>
   </div>
 </template>
 <script>
 import firebase from "../../firebase";
-import Swal from 'sweetalert2';
-
+import Swal from "sweetalert2";
 
 export default {
   name: "Canvas",
@@ -120,7 +198,7 @@ export default {
       const color = e.currentTarget.value;
       this.ctx.strokeStyle = color;
     },
-    getQuickColor(e){
+    getQuickColor(e) {
       const color = e.currentTarget.style.backgroundColor;
       this.ctx.strokeStyle = color;
     },
@@ -139,12 +217,12 @@ export default {
       }
       return (this.ctx.strokeStyle = color);
     },
-    getCanvas(){
+    getCanvas() {
       /*src: https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank*/
       const pixelBuffer = new Uint32Array(
         this.ctx.getImageData(0, 0, 500, 500).data.buffer
       );
-      return !pixelBuffer.some((color) => color !==0);
+      return !pixelBuffer.some((color) => color !== 0);
     },
     async save() {
       const storageRef = firebase.storage().ref();
@@ -152,36 +230,35 @@ export default {
       /*save canvas image as data url (png format by default)*/
       const dataURL = this.canvas.toDataURL();
 
-      if(!this.getCanvas(this.canvas.current)){
+      if (!this.getCanvas(this.canvas.current)) {
         document.getElementById("save").disabled = false;
         await fetch(dataURL)
           .then((res) => res.blob())
           .then((res) => storageRef.child(id).put(res))
           .catch((err) => {
-          Swal.fire({
-            title: 'Error!',
-            text: 'Something broke..',
-            icon: 'error'
-        })
+            Swal.fire({
+              title: "Error!",
+              text: "Something broke..",
+              icon: "error",
+            });
             console.log(err);
           });
         Swal.fire({
-          title: 'Success!',
-          text: 'Drawing saved! Page will now reload.',
-          icon: 'success'
-        })
-        setTimeout(function(){
+          title: "Success!",
+          text: "Drawing saved! Page will now reload.",
+          icon: "success",
+        });
+        setTimeout(function() {
           location.reload(); /*reload page after canvas cleared*/
-        }, 5000)
+        }, 5000);
 
         return false;
-      }
-      else{
+      } else {
         Swal.fire({
-          title: 'Oops!',
-          text: 'Cannot save an empty canvas! 😢',
-          icon: 'warning',
-        })
+          title: "Oops!",
+          text: "Cannot save an empty canvas! 😢",
+          icon: "warning",
+        });
       }
     },
     /*create random id for fb storage*/
@@ -230,8 +307,9 @@ button:focus {
   display: flex;
   flex-direction: column;
   grid-area: color;
+  width: 90%;
   margin-top: 2rem;
-  margin-right: 1rem;
+  margin-left: 10px;
 }
 
 .draw-options label {
@@ -239,14 +317,13 @@ button:focus {
 }
 
 .settings-canvas-grid {
-  z-index: 2;
   display: grid;
   gap: 5px;
-  grid-template-rows: auto;
+  height: 600px;
   grid-template-areas:
-    "color canvas canvas"
-    "color canvas canvas"
-    "box box box";
+    "color canvas"
+    "color canvas"
+    "box box";
 }
 
 .color-selection {
@@ -270,15 +347,55 @@ button:focus {
   border-radius: 100%;
 }
 
-.box {
-  width: 10px;
-  height: 10px;
-}
-
 .quick-colors {
   grid-area: box;
   width: 650px;
   margin-left: 55px;
+  margin-top: -20px;
 }
 
+@media (max-width: 1435px) {
+  .draw-options {
+    width: 90%;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 770px) {
+  .settings-canvas-grid {
+    grid-template-areas:
+      "canvas"
+      "color"
+      "box";
+  }
+
+  .draw-options {
+    width: 50%;
+    display: grid;
+    grid-area: options;
+  }
+
+  .draw-options-quick-colors{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    align-content: center;
+    border: 1px solid red;
+    width: 500px;
+  }
+
+  .quick-colors{
+    display: grid;
+    height: 200px;
+    margin-top: 10%;
+    grid-template-columns: repeat(4, max-content);
+    grid-template-rows: auto;
+    grid-area: colors;
+  }
+
+  button{
+    border-radius: 25px;
+  }
+}
 </style>

@@ -38,7 +38,7 @@ header{
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
-    min-width: 805px;
+    min-width: 100%;
     background: rgb(54, 54, 54);
 }
 
@@ -83,5 +83,19 @@ p {
   border-radius: 25px;
   text-align: right;
 }
+
+@media (max-width: 1435px){
+  header{
+    min-width: 700px;
+  }
+
+  p{
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
 
 </style>
