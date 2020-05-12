@@ -255,7 +255,7 @@ export default {
         return false;
       } else {
         Swal.fire({
-          title: "Oops!",
+          title: "Oops..",
           text: "Cannot save an empty canvas! 😢",
           icon: "warning",
         });
@@ -361,25 +361,19 @@ button:focus {
   box-shadow: 2px 2px 0px 0px #3D3B30;
 }
 
-@media(max-width: 1060px){
-
-  .quick-colors{
-    margin-top: -80px;
-  }
-
+@media (max-width: 1160px){
   .settings-canvas-grid{
-    height: 650px;
+    min-height: 580px;
   }
-
 }
 
-@media (max-width: 770px) {
+@media (max-width: 880px) {
 
   .settings-canvas-grid{
     grid-template-areas:
     "canvas canvas"
     "color box";
-    height: 900px;
+    min-height: 700px;
   }
 
   .canvas-wrap{
@@ -387,21 +381,24 @@ button:focus {
   }
 
   .quick-colors{
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
-    margin-top: -100px;
+    margin-top: -30px;
   }
 
   .draw-options{
-    margin-left: 100px;
-    margin-top: -100px;
+    margin-left: 140px;
+    margin-top: -30px;
     height: 50px;
+    width: 70px;
     display: grid;
-
+    grid-template-columns: repeat(2, min-content);
+    margin-right: 90px;
   }
 
   button{
     border-radius: 25px;
+    font-size: .8rem;
   }
 }
 </style>

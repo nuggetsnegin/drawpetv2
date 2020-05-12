@@ -27,16 +27,25 @@ export default {
 .swal2-title,
 .swal2-content{
   font-family: "Fredoka One", cursive;
-  color: #0D1821;
+  color: #3D3B30;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .swal2-content{
-  color: #344966;
+  color: #3D3B30;
+  text-transform: initial;
 }
 
 .swal2-styled.swal2-confirm{
-  background: #BFCC94;
+  background: #E7E247;
+  color: #3D3B30;
+  font-weight: 900;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #E7E247;
+    color: #E7E247;
 }
 
 #app {
@@ -72,19 +81,11 @@ html, body{
 
 @media (max-width: 1435px){
 
-  .gallery{
-    max-width: 300px;
-  }
-
-  .canvas{
-    max-width: 400px;
-  }
-
   .gallery-wrapper li {
     grid-template-columns: repeat(2, min-content);
   }
 
-@media (max-width: 1060px){
+@media (max-width: 1160px){
   #app{
     grid-template-areas:
       "canvas"
@@ -98,6 +99,22 @@ html, body{
 
   .gallery-wrapper li {
     grid-template-columns: repeat(5, min-content);
+  }
+}
+
+@media (max-width: 880px){
+  .gallery-wrapper li {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    padding-left: 20px;
+  }
+  
+  .gallery{
+    max-width: 500px;
+  }
+
+  .canvas{
+    max-width: 200px;
   }
 }
 

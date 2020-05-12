@@ -101,7 +101,8 @@ p {
   }
 
   .wrapper{
-    min-width: 800px;
+    max-width: 800px;
   }
 }
+
 </style>
