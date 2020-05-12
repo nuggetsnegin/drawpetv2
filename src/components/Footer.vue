@@ -26,9 +26,4 @@ a:focus{
   font-weight: 900;
 }
 
-p{
-  background: white;
-  padding: 5px 0px;
-  border-radius: 3px;
-}
 </style>

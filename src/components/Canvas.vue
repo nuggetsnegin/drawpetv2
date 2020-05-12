@@ -372,7 +372,6 @@ button:focus {
     grid-template-areas:
     "canvas canvas"
     "color box";
-        border: 1px solid red;
     height: 900px;
   }
 
@@ -384,7 +383,6 @@ button:focus {
     width: 50%;
     margin: 0 auto;
     margin-top: -100px;
-    border: 1px solid red;
   }
 
   .draw-options{
