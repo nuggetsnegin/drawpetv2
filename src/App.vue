@@ -24,6 +24,21 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+.swal2-title,
+.swal2-content{
+  font-family: "Fredoka One", cursive;
+  color: #222222;
+  letter-spacing: 1px;
+}
+
+.swal2-content{
+  color: rgb(58, 57, 54);
+}
+
+.swal2-styled.swal2-confirm{
+  background: rgb(107, 115, 236);
+}
+
 #app {
   color: #222222;
   font-family: "Fredoka One", cursive;

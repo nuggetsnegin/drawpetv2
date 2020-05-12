@@ -61,10 +61,10 @@
     </div>
   </div>
 </template>
-
 <script>
 import firebase from "../../firebase";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 
 export default {
   name: "Canvas",
@@ -158,11 +158,16 @@ export default {
           .then((res) => res.blob())
           .then((res) => storageRef.child(id).put(res))
           .catch((err) => {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Something broke..',
+            icon: 'error'
+        })
             console.log(err);
           });
         Swal.fire({
           title: 'Success!',
-          text: 'Drawing saved! Page will now reload',
+          text: 'Drawing saved! Page will now reload.',
           icon: 'success'
         })
         setTimeout(function(){
@@ -175,7 +180,7 @@ export default {
         Swal.fire({
           title: 'Oops!',
           text: 'Cannot save an empty canvas! 😢',
-          icon: 'error'
+          icon: 'warning',
         })
       }
     },
@@ -275,4 +280,5 @@ button:focus {
   width: 650px;
   margin-left: 55px;
 }
+
 </style>
