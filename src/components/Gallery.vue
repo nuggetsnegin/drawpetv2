@@ -74,12 +74,16 @@ export default {
 
 .gallery-wrapper {
   margin: 10px;
+  max-height: 800px;
+  max-width: 700px;
   grid-area: gallery;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .gallery-wrapper li {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, min-content);
   grid-template-rows: auto;
 }
 
@@ -104,7 +108,7 @@ span {
   color: white;
   text-align: center;
   text-transform: uppercase;
-  padding: 10px;
+  padding-top: 15px;
   /* -webkit-text-stroke: 3px white; */
 }
 

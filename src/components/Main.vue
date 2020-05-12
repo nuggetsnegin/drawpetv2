@@ -55,7 +55,7 @@ i{
 }
 
 h1 {
-  padding-top: 10px;
+  padding-top: 15px;
   text-align: left;
   text-transform: uppercase;
   /* -webkit-text-stroke: 3px white; */
@@ -81,7 +81,7 @@ p {
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 25px;
-  text-align: center;
+  text-align: right;
 }
 
 </style>

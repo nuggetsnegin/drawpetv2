@@ -64,6 +64,8 @@
 
 <script>
 import firebase from "../../firebase";
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
 
 export default {
   name: "Canvas",
@@ -159,11 +161,20 @@ export default {
           .catch((err) => {
             console.log(err);
           });
+        Swal.fire({
+          title: 'Success!',
+          text: 'Drawing saved! Page will now reload',
+          icon: 'success'
+        })
         location.reload(); /*reload page after canvas cleared*/
         return false;
       }
       else{
-        console.log('blank canvas')
+        Swal.fire({
+          title: 'Oops!',
+          text: 'Cannot save an empty canvas! 😢',
+          icon: 'error'
+        })
       }
     },
     /*create random id for fb storage*/
