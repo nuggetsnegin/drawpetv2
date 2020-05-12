@@ -1,8 +1,8 @@
 # drawpetv2
 
-![Draw My Pet](https://i.gyazo.com/336b7547d0738bf743fb30b3750b6f4d.png)
+![Draw My Pet](https://i.imgur.com/gdfIRNJ.png)
 # Draw My Pet V2
-Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-sauermann-beyond-bootcamp). Second version of the drawing application using Vue, HTML Canvas and Firebase for storage!
+Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-sauermann-beyond-bootcamp). Refactored from vanilla JavaScript to Vue! Improved error handling and added new features (quick colors, alerts, blank canvas).
 
 
 [Live Link](https://nuggetsnegin.github.io/drawpetv2/)
@@ -10,6 +10,7 @@ Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-s
 ## Built With
 
 * [Vue](https://vuejs.org/)
+* [SweetAlert2](https://sweetalert2.github.io/)
 * [Visual Studio Code](https://code.visualstudio.com/) 
 * [Firebase](https://firebase.google.com/)
 * [Sass](https://sass-lang.com/)
@@ -28,6 +29,8 @@ Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-s
 * ~~Color picker - this is ezpz pls implement soon Negin 8(~~
 * Pen size
 * Accessible (requires mouse or touch)
+* Mobile media queries/UI redesign
+* option to title art?
 
 ## Authors
 
