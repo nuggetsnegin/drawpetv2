@@ -367,27 +367,44 @@ button:focus {
 }
 
 @media (max-width: 770px) {
-  .settings-canvas-grid {
+
+  .settings-canvas-grid{
     grid-template-areas:
-      "canvas"
-      "color"
-      "box";
+    "canvas canvas"
+    "color box";
+        border: 1px solid red;
+    height: 900px;
   }
 
-  .draw-options {
-    width: 50%;
-    display: grid;
-    grid-area: options;
+  .canvas-wrap{
+      margin: 0 auto;
   }
 
   .quick-colors{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -100px;
+    border: 1px solid red;
+  }
+
+  .draw-options{
+    margin-left: 100px;
+    margin-top: -100px;
+    height: 50px;
     display: grid;
-    height: 200px;
+    /* grid-template-columns: repeat(2, min-content);
+    grid-template-rows: repeat(2, min-content); */
+
+  }
+
+/* 
+  .quick-colors{
+    display: grid;
     margin-top: 10%;
     grid-template-columns: repeat(4, max-content);
     grid-template-rows: auto;
     grid-area: colors;
-  }
+  } */
 
   button{
     border-radius: 25px;
