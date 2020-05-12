@@ -74,7 +74,7 @@ span {
 
 p {
   margin-top: 2rem;
-  margin-left: 240px;
+  margin-left: 290px;
   width: 50%;
   background: white;
   color: black;
