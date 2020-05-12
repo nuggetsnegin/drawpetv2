@@ -39,7 +39,7 @@
       <div class="quick-colors" id="colors">
         <button
           class="color-1 box"
-          style="background: #01BAEF"
+          style="background: black"
           @click="this.getQuickColor"
         ></button>
         <button
@@ -278,7 +278,8 @@ export default {
   border-radius: 10px;
   background: white;
   grid-area: canvas;
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-right: 25px;
   width: 500px;
   height: 500px;
 }
@@ -307,9 +308,9 @@ button:focus {
   display: flex;
   flex-direction: column;
   grid-area: color;
-  width: 90%;
+  width: 80%;
   margin-top: 2rem;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .draw-options label {
@@ -319,11 +320,10 @@ button:focus {
 .settings-canvas-grid {
   display: grid;
   gap: 5px;
-  height: 600px;
   grid-template-areas:
     "color canvas"
     "color canvas"
-    "box box";
+    "box canvas";
 }
 
 .color-selection {
@@ -349,9 +349,15 @@ button:focus {
 
 .quick-colors {
   grid-area: box;
-  width: 650px;
-  margin-left: 55px;
-  margin-top: -20px;
+  width: 200px;
+  margin-left: 25px;
+  margin-top: -100px;
+}
+
+.box{
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 2px 2px 0px 0px black;
 }
 
 @media(max-width: 1060px){

@@ -27,20 +27,20 @@ export default {
 .swal2-title,
 .swal2-content{
   font-family: "Fredoka One", cursive;
-  color: #222222;
+  color: #0D1821;
   letter-spacing: 1px;
 }
 
 .swal2-content{
-  color: rgb(58, 57, 54);
+  color: #344966;
 }
 
 .swal2-styled.swal2-confirm{
-  background: rgb(107, 115, 236);
+  background: #BFCC94;
 }
 
 #app {
-  color: #222222;
+  color: #0D1821;
   font-family: "Fredoka One", cursive;
   display: grid;
   height: 100vh;

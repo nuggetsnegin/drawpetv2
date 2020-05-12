@@ -56,16 +56,18 @@ export default {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  background: rgb(42, 42, 44);
+  background: #0D1821;
   margin-bottom: 1rem;
 }
 
 .window-icons {
   padding: 10px;
+  color: white;
 }
 
 .draw-icon {
   padding: 10px;
+  color: white;
 }
 
 .fas {
