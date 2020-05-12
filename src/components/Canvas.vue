@@ -64,7 +64,6 @@
 
 <script>
 import firebase from "../../firebase";
-// ES6 Modules or TypeScript
 import Swal from 'sweetalert2'
 
 export default {
@@ -166,7 +165,10 @@ export default {
           text: 'Drawing saved! Page will now reload',
           icon: 'success'
         })
-        location.reload(); /*reload page after canvas cleared*/
+        setTimeout(function(){
+          location.reload(); /*reload page after canvas cleared*/
+        }, 5000)
+
         return false;
       }
       else{
