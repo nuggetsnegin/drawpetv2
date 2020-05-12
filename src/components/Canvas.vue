@@ -397,19 +397,8 @@ button:focus {
     margin-top: -100px;
     height: 50px;
     display: grid;
-    /* grid-template-columns: repeat(2, min-content);
-    grid-template-rows: repeat(2, min-content); */
 
   }
-
-/* 
-  .quick-colors{
-    display: grid;
-    margin-top: 10%;
-    grid-template-columns: repeat(4, max-content);
-    grid-template-rows: auto;
-    grid-area: colors;
-  } */
 
   button{
     border-radius: 25px;
