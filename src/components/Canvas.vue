@@ -226,7 +226,7 @@ export default {
     },
     getPenSize(e){
       console.log(e.currentTarget.style.padding)
-      let penSize = (e.currentTarget.style.padding) - 'px';
+      let penSize = (e.currentTarget.style.padding.replace("px", ""));
       console.log(penSize)
       this.ctx.lineWidth = penSize;
       console.log(this.ctx.lineWidth);
