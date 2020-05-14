@@ -168,6 +168,7 @@ export default {
     this.ctx = this.canvas.getContext("2d");
     this.ctx.lineWidth = 10;
     this.ctx.lineCap = "round";
+    this.ctx.lineJoin = "round";
   },
   methods: {
     startDrawing(e) {
@@ -335,7 +336,8 @@ button:focus {
   grid-template-areas:
     "color canvas"
     "color canvas"
-    "box canvas";
+    "box canvas"
+    ". size";
 }
 
 .color-selection {
@@ -377,6 +379,7 @@ button:focus {
   border: none;
   box-shadow: none;
   border: 1px solid red;
+  grid-area: size;
 }
 
 .pensize button{
