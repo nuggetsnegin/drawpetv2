@@ -138,6 +138,13 @@
           @click="this.getQuickColor"
         ></button>
       </div>
+
+    <button class="pensize">
+          <button class="pensize-small"></button>
+          <button class="pensize-medium"></button>
+          <button class="pensize-large"></button>
+          <button class="pensize-xlarge"></button>
+    </button>
   </div>
 </template>
 <script>
