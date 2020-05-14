@@ -395,8 +395,8 @@ button:focus {
 
   .settings-canvas-grid{
     grid-template-areas:
-    "canvas canvas"
-    "color box";
+    "canvas canvas canvas"
+    "color box pensize";
     min-height: 700px;
   }
 
