@@ -225,11 +225,8 @@ export default {
       return (this.ctx.strokeStyle = color);
     },
     getPenSize(e){
-      console.log(e.currentTarget.style.padding)
       let penSize = (e.currentTarget.style.padding.replace("px", ""));
-      console.log(penSize)
       this.ctx.lineWidth = penSize;
-      console.log(this.ctx.lineWidth);
     },
     getCanvas() {
       /*src: https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank*/
