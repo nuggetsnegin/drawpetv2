@@ -140,11 +140,10 @@
       </div>
 
     <button class="pensize">
-      <h3>Pencil Size</h3>
           <button class="pensize-small" style="padding: 5px" @click="this.getPenSize"></button>
-          <button class="pensize-medium" style="padding: 7px" @click="this.getPenSize"></button>
-          <button class="pensize-large" style="padding: 10px" @click="this.getPenSize"></button>
-          <button class="pensize-xlarge" style="padding: 13px" @click="this.getPenSize"></button>
+          <button class="pensize-medium" style="padding: 10px" @click="this.getPenSize"></button>
+          <button class="pensize-large" style="padding: 15px" @click="this.getPenSize"></button>
+          <button class="pensize-xlarge" style="padding: 20px" @click="this.getPenSize"></button>
     </button>
   </div>
 </template>
@@ -378,8 +377,8 @@ button:focus {
   background: none;
   border: none;
   box-shadow: none;
-  border: 1px solid red;
   grid-area: size;
+  justify-self: flex-end;
 }
 
 .pensize button{
