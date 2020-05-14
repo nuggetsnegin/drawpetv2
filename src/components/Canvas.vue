@@ -368,6 +368,33 @@ button:focus {
   box-shadow: 2px 2px 0px 0px #3D3B30;
 }
 
+.pensize{
+  background: none;
+  border: none;
+  box-shadow: none;
+  border: 1px solid red;
+}
+
+.pensize button{
+  border-radius: 25px;
+}
+
+.pensize-small{
+    padding: 5px;
+}
+
+.pensize-medium{
+  padding: 7px;
+}
+
+.pensize-large{
+  padding: 10px;
+}
+
+.pensize-xlarge{
+  padding: 13px;
+}
+
 @media (max-width: 1160px){
   .settings-canvas-grid{
     min-height: 580px;
