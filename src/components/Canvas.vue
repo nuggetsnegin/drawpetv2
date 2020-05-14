@@ -140,10 +140,11 @@
       </div>
 
     <button class="pensize">
-          <button class="pensize-small"></button>
-          <button class="pensize-medium"></button>
-          <button class="pensize-large"></button>
-          <button class="pensize-xlarge"></button>
+      <h3>Pencil Size</h3>
+          <button class="pensize-small" style="padding: 5px" @click="this.getPenSize"></button>
+          <button class="pensize-medium" style="padding: 7px" @click="this.getPenSize"></button>
+          <button class="pensize-large" style="padding: 10px" @click="this.getPenSize"></button>
+          <button class="pensize-xlarge" style="padding: 13px" @click="this.getPenSize"></button>
     </button>
   </div>
 </template>
@@ -223,6 +224,12 @@ export default {
         color += letters[Math.floor(Math.random() * 16)];
       }
       return (this.ctx.strokeStyle = color);
+    },
+    getPenSize(e){
+      console.log(e.currentTarget.style.padding)
+      let penSize = (e.currentTarget.style.padding) - 'px';
+      this.ctx.lineWidth = penSize;
+      console.log(this.ctx.lineWidth);
     },
     getCanvas() {
       /*src: https://stackoverflow.com/questions/17386707/how-to-check-if-a-canvas-is-blank*/
@@ -377,22 +384,6 @@ button:focus {
 
 .pensize button{
   border-radius: 25px;
-}
-
-.pensize-small{
-    padding: 5px;
-}
-
-.pensize-medium{
-  padding: 7px;
-}
-
-.pensize-large{
-  padding: 10px;
-}
-
-.pensize-xlarge{
-  padding: 13px;
 }
 
 @media (max-width: 1160px){
