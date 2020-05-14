@@ -168,7 +168,6 @@ export default {
     this.ctx = this.canvas.getContext("2d");
     this.ctx.lineWidth = 10;
     this.ctx.lineCap = "round";
-    this.ctx.lineJoin = "round";
   },
   methods: {
     startDrawing(e) {
