@@ -336,7 +336,7 @@ button:focus {
     "color canvas"
     "color canvas"
     "box canvas"
-    ". size";
+    ". pensize";
 }
 
 .color-selection {
@@ -392,8 +392,7 @@ button:focus {
 }
 
 @media (max-width: 880px) {
-
-  .settings-canvas-grid{
+ .settings-canvas-grid{
     grid-template-areas:
     "canvas canvas canvas"
     ". pensize ."
