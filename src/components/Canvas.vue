@@ -139,12 +139,13 @@
         ></button>
       </div>
 
-    <button class="pensize">
+    <div class="pensize">
+      <h2>Size</h2>
           <button class="pensize-small" style="padding: 5px" @click="this.getPenSize"></button>
           <button class="pensize-medium" style="padding: 10px" @click="this.getPenSize"></button>
           <button class="pensize-large" style="padding: 15px" @click="this.getPenSize"></button>
           <button class="pensize-xlarge" style="padding: 20px" @click="this.getPenSize"></button>
-    </button>
+    </div>
   </div>
 </template>
 <script>
@@ -305,7 +306,7 @@ button {
   margin: 5px;
   text-transform: uppercase;
   background-color: #E7E247;
-  color: #3D3B30;
+  color: #222222;
 }
 
 button:hover,
@@ -385,6 +386,10 @@ button:focus {
   border-radius: 25px;
 }
 
+.pensize h3{
+  color: #222222;
+}
+
 @media (max-width: 1160px){
   .settings-canvas-grid{
     min-height: 580px;
@@ -393,36 +398,25 @@ button:focus {
 
 @media (max-width: 880px) {
  .settings-canvas-grid{
-    grid-template-areas:
-    "canvas canvas canvas"
-    ". pensize ."
-    "color box box";
-    min-height: 700px;
+   display: flex;
+   flex-direction: column;
+
   }
 
   .canvas-wrap{
       margin: 0 auto;
   }
 
-  .quick-colors{
-    width: 60%;
-    margin-top: 0.2rem;
-    margin-left: 150px;
-    padding: 10px;
+  .quick-colors,
+  .pensize{
+    margin: 0 auto;
   }
 
-  .pensize{
-    border: 1px solid red;
-    padding: 0px;
-  }
+
   .draw-options{
-    margin-left: 100px;
-    margin-top: 0.2rem;
-    height: 50px;
-    width: 70px;
     display: grid;
-    grid-template-columns: repeat(3, min-content);
-    margin-right: 90px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px auto;
   }
 
   button{
@@ -430,5 +424,15 @@ button:focus {
     font-size: .8rem;
     padding: 5px 20px;
   }
+
+  /* canvas{
+    width: 300px;
+    height: 300px;
+  }
+
+  .canvas-wrap{
+    width: 300px;
+    height: 300px;
+  } */
 }
 </style>

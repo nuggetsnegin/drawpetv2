@@ -95,6 +95,7 @@ p {
 
 
 @media (max-width: 1450px){
+
   p {
     margin-left: 0px;
     margin-bottom: 10px;
@@ -109,7 +110,6 @@ p {
   }
 
 }
-
 
 
 @media (max-width: 880px){
