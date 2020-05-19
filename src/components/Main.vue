@@ -14,6 +14,10 @@
       entire world can see your masterpiece.
     </p>
 
+    <p class="touch-resp">
+      Sorry, I'm <span class="accent">not touch responsive</span> (yet)!
+    </p>
+
     <Canvas />
   </main>
 </template>
@@ -93,6 +97,10 @@ p {
   text-align: right;
 }
 
+.touch-resp{
+  display: none;
+}
+
 
 @media (max-width: 1450px){
 
@@ -117,6 +125,14 @@ p {
   .wrapper{
     min-width: 520px;
   }
+
+.touch-resp{
+  display: block;
+  width: 80%;
+  text-align: center;
+  margin: 0;
+}
+
 
 }
 
