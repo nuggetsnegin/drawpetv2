@@ -93,16 +93,5 @@ p {
   text-align: right;
 }
 
-@media (max-width: 1450px) {
-
-  p {
-    margin-left: 0px;
-    margin-bottom: 10px;
-  }
-
-  .wrapper{
-    max-width: 800px;
-  }
-}
 
 </style>

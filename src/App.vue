@@ -79,11 +79,22 @@ html, body{
   height: 100vh;
 }
 
-@media (max-width: 1435px){
+@media (max-width: 1450px){
 
   .gallery-wrapper li {
     grid-template-columns: repeat(2, min-content);
   }
+
+    p {
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+
+  .wrapper{
+    max-width: 800px;
+  }
+
+}
 
 @media (max-width: 1160px){
   #app{
@@ -116,9 +127,16 @@ html, body{
   .canvas{
     max-width: 200px;
   }
+
+  .wrapper{
+    min-width: 520px;
+    border: 1px solid red;
+  }
+
+  
 }
 
-}
+
 body {
   display: flex;
   flex-direction: column;
