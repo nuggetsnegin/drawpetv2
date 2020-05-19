@@ -182,7 +182,10 @@ export default {
       if(e.type === "touchstart"){
         x = e.nativeEvent.touches[0].clientX - rect.left; 
         y = e.nativeEvent.touches[0].clientY - rect.top;
-
+      }
+      else{
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
       }
 
       this.drawing = true;
@@ -194,10 +197,18 @@ export default {
     },
     draw(e) {
       const rect = this.canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
 
       if (!this.drawing) return;
+
+      if(e.type === "touchmove"){
+        x = e.nativeEvent.touches[0].clientX - rect.left;
+        y = e.nativeEvent.touches[0].clientY - rect.top;
+      }else{
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
+      }
 
       this.ctx.lineTo(x, y);
       this.ctx.stroke();
@@ -292,7 +303,7 @@ export default {
 
 <style scoped>
 .canvas-wrap {
-  border: 2px dashed #3D3B30;
+  border: 3px dashed #3D3B30;
   border-radius: 10px;
   background: white;
   grid-area: canvas;
