@@ -13,9 +13,7 @@ Version 2 of my [vanilla JavaScript app](https://github.com/nuggetsnegin/negin-s
 * [SweetAlert2](https://sweetalert2.github.io/)
 * [Visual Studio Code](https://code.visualstudio.com/) 
 * [Firebase](https://firebase.google.com/)
-* [Sass](https://sass-lang.com/)
 * [Animista](https://animista.net/)
-* art by me!
 
 
 
