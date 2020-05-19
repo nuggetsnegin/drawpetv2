@@ -377,7 +377,7 @@ button:focus {
   background: none;
   border: none;
   box-shadow: none;
-  grid-area: size;
+  grid-area: pensize;
   justify-self: flex-end;
 }
 
@@ -396,7 +396,8 @@ button:focus {
   .settings-canvas-grid{
     grid-template-areas:
     "canvas canvas canvas"
-    "color box pensize";
+    ". pensize ."
+    "color box box";
     min-height: 700px;
   }
 
@@ -405,24 +406,30 @@ button:focus {
   }
 
   .quick-colors{
-    width: 40%;
-    margin: 0 auto;
-    margin-top: -30px;
+    width: 60%;
+    margin-top: 0.2rem;
+    margin-left: 150px;
+    padding: 10px;
   }
 
+  .pensize{
+    border: 1px solid red;
+    padding: 0px;
+  }
   .draw-options{
-    margin-left: 140px;
-    margin-top: -30px;
+    margin-left: 100px;
+    margin-top: 0.2rem;
     height: 50px;
     width: 70px;
     display: grid;
-    grid-template-columns: repeat(2, min-content);
+    grid-template-columns: repeat(3, min-content);
     margin-right: 90px;
   }
 
   button{
     border-radius: 25px;
     font-size: .8rem;
+    padding: 5px 20px;
   }
 }
 </style>
