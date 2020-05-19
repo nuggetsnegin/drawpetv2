@@ -140,7 +140,6 @@
       </div>
 
     <div class="pensize">
-      <h2>Size</h2>
           <button class="pensize-small" style="padding: 5px" @click="this.getPenSize"></button>
           <button class="pensize-medium" style="padding: 10px" @click="this.getPenSize"></button>
           <button class="pensize-large" style="padding: 15px" @click="this.getPenSize"></button>
@@ -380,15 +379,13 @@ button:focus {
   box-shadow: none;
   grid-area: pensize;
   justify-self: flex-end;
+  padding: 10px;
 }
 
 .pensize button{
   border-radius: 25px;
 }
 
-.pensize h3{
-  color: #222222;
-}
 
 @media (max-width: 1160px){
   .settings-canvas-grid{
@@ -398,9 +395,12 @@ button:focus {
 
 @media (max-width: 880px) {
  .settings-canvas-grid{
-   display: flex;
-   flex-direction: column;
-
+   display: grid;
+   grid-template-areas: 
+   ". . pensize"
+   " canvas canvas canvas"
+   "color color box";
+   gap: 10px;
   }
 
   .canvas-wrap{
@@ -410,6 +410,10 @@ button:focus {
   .quick-colors,
   .pensize{
     margin: 0 auto;
+  }
+
+  .quick-colors{
+    margin-bottom: 10px;
   }
 
 
