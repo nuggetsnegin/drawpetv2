@@ -116,7 +116,14 @@ p {
 
   .wrapper{
     min-width: 520px;
-    border: 1px solid red;
+  }
+
+}
+
+@media (max-width: 660px){
+
+  .wrapper{
+    min-width: 300px;
   }
 
 }

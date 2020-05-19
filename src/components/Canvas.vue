@@ -428,8 +428,11 @@ button:focus {
     font-size: .8rem;
     padding: 5px 20px;
   }
+}
 
-  /* canvas{
+/* @media(max-width: 660px){
+  
+  canvas{
     width: 300px;
     height: 300px;
   }
@@ -437,6 +440,7 @@ button:focus {
   .canvas-wrap{
     width: 300px;
     height: 300px;
-  } */
-}
+  } 
+} */
+
 </style>
