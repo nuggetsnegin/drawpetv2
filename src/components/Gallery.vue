@@ -127,6 +127,7 @@ span {
 @media (max-width: 880px){
   .gallery-wrapper{
     min-width: 490px;
+    padding: 0;
   }
 }
 /* ----------------------------------------------
