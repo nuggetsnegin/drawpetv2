@@ -85,7 +85,7 @@ html, body{
     grid-template-columns: repeat(2, min-content);
   }
 
-    p {
+  p {
     margin-left: 0px;
     margin-bottom: 10px;
   }
