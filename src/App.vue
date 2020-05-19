@@ -85,15 +85,6 @@ html, body{
     grid-template-columns: repeat(2, min-content);
   }
 
-  p {
-    margin-left: 0px;
-    margin-bottom: 10px;
-  }
-
-  .wrapper{
-    max-width: 800px;
-  }
-
 }
 
 @media (max-width: 1160px){
@@ -128,12 +119,6 @@ html, body{
     max-width: 200px;
   }
 
-  .wrapper{
-    min-width: 520px;
-    border: 1px solid red;
-  }
-
-  
 }
 
 
