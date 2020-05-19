@@ -172,11 +172,18 @@ export default {
   methods: {
     startDrawing(e) {
       const rect = this.canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
 
       this.startX = x;
       this.startY = y;
+
+      //check if user is on touchscreen to change to touch events rather than mouse
+      if(e.type === "touchstart"){
+        x = e.nativeEvent.touches[0].clientX - rect.left; 
+        y = e.nativeEvent.touches[0].clientY - rect.top;
+
+      }
 
       this.drawing = true;
       this.draw(e);
