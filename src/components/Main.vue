@@ -102,4 +102,22 @@ p {
 
 }
 
+@media (max-width: 1450px){
+
+  .wrapper{
+    max-width: 800px;
+  }
+
+}
+
+
+
+@media (max-width: 880px){
+
+  .wrapper{
+    min-width: 520px;
+    border: 1px solid red;
+  }
+
+}
 </style>
