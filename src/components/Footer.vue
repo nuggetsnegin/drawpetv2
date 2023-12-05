@@ -1,5 +1,5 @@
 <template>
-    <footer><p>🌟<a href="https://negi.dev/" target="_blank">Negin Melina Sauermann</a> &copy; 2020🌟</p></footer>
+    <footer><p>🌟<a href="https://negi.dev/" target="_blank">Negi</a> &copy; 2020🌟</p></footer>
 </template>
 
 <script>
